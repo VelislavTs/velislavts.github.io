@@ -1,0 +1,10 @@
+.grid-item {
+    width: 300px;
+}
+
+.grid-item img {
+    width: 100%;
+    border-width: 2px;
+    border-style: solid;
+    border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
+}
