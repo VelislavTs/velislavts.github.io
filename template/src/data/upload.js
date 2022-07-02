@@ -5,39 +5,15 @@ import {
 } from "../common/requests-params.js"
 
 export const uploadGif = async (file) => {
-    const objectToSend = createJSONObject(file);
+    const formData = new FormData();
+    formData.append("file", file);
     const fetchURL = UPLOAD_REQUEST_URL + API_KEY + USERNAME
-    let xhr = new XMLHttpRequest()
-     
-    xhr.open('POST', fetchURL, true)
-    xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
-    xhr.send(post);
-     
-    xhr.onload = function () {
-        if(xhr.status === 201) {
-            console.log("Post successfully created!") 
-        }
-    }
-}
-
-const createJSONObject = (file) => {
-    let obj = {
-        "file": file,
+    var requestOptions = {
+        method: 'POST',
+        body: formData,
+        redirect: 'follow'
     };
-    return JSON.stringify(obj);
+
+    const response = await fetch(fetchURL, requestOptions)
+    const result = await response.text();
 }
-
-// const fetchURL = UPLOAD_REQUEST_URL + API_KEY + USERNAME
-// let response = await fetch(fetchURL, {
-//     method: 'POST',
-//     body: objectToSend,
-//     headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json',
-//     }
-// })
-
-// response = await response.json();
-// const data = response.json();
-// const status = data.status;
-// alert(status)
