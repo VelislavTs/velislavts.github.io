@@ -1,3 +1,5 @@
+import { q } from "./events/helpers.js";
+import { loadPage } from "./events/navigation-handling.js";
 import { renderSearchData } from "./events/search-events.js";
 
 
@@ -12,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(event.target.getAttribute('button-value'))
             loadPage(event.target.getAttribute('button-value'));
         };
+    })
+
+    document.getElementById('formFile').addEventListener('onchange', (event) => {
+        frame.src = URL.createObjectURL(event.target.files[0]);
     })
 });
 

@@ -34,6 +34,14 @@ body {
     background-color: hsla(5, 76%, 62%, .8);
 }
 
+.nav-link.active {
+    font-weight: bold;
+    color: rgba(52, 145, 147, 0.687) !important
+}
+
+.nav-link:hover {
+    color: rgba(52, 145, 147, 0.687) !important
+}
 .grid-item {
     width: 300px;
 }
