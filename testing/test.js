@@ -3,7 +3,7 @@ const REQUEST_URL = 'https://api.giphy.com/v1/gifs/trending?'
 const LIMIT = '&limit=25'
 const RATING = '&rating=g'
 // https://api.giphy.com/v1/gifs/trending?api_key=eKe4TcSvYOBAjxJYbt0cc2UESWgsz8Yq&limit=25&rating=g
-const grid = document.querySelector('.grid');
+const grid = document.getElementById('grid');
 
 const getData = async () => {
     const response = await fetch(REQUEST_URL+API_KEY+LIMIT+RATING)
@@ -33,6 +33,7 @@ const setMasonry = () => {
         gutter: 10,
         originLeft: false,
         originRight: false,
+        fitWidth: true,
     });
 };
 

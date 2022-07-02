@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ='stylesheet' href = '../template/styles/styles.css'>
-    <title>Document</title>
+    <link rel='stylesheet' href='../template/styles/styles.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title> Giphinator </title>
+    <link rel="shortcut icon" type="image/png"
+        href="https://media4.giphy.com/media/XMgq4wclEITQjivNeV/200w.gif?cid=82a1493bijzk3ok9vvj1x4vqiofko9grt8ynwf5rhiou4os5&rid=200w.gif&ct=g">
 </head>
+
 <body>
-    <div class='grid'>
+    <div id='giphinator' class='container bg-light'>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://media4.giphy.com/media/XMgq4wclEITQjivNeV/200w.gif?cid=82a1493bijzk3ok9vvj1x4vqiofko9grt8ynwf5rhiou4os5&rid=200w.gif&ct=g"
+                        alt="" width="60" height="60" class="d-inline-block align-text-top">
+                    <h1 class="d-inline-block align-text-top"> Giphinator </h1>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav" style="justify-content: right;">
+                    <a class="nav-link active" aria-current="page" href="#">Trending</a>
+                    <a class="nav-link" href="#">Favorites</a>
+                    <a class="nav-link" href="#">Upload</a>
+                    <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-xl-1 col-md-2"> </div>
+            <div class='col-xl-10 col-md-8' id="grid"> </div>
+            <div class="col-xl-1 col-md-2"> </div>
+        </div>
     </div>
-    <script src = 'test.js'> </script>
+    <script src='test.js'> </script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

@@ -8,3 +8,17 @@
     border-style: solid;
     border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
 }
+
+#grid {
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+a {
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: #dce8e0 !important;
+    background-color: rgb(61, 242, 245) !important;
+}
