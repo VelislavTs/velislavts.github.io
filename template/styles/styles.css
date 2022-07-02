@@ -2,6 +2,10 @@ a {
     font-size: 1.5rem;
 }
 
+a > img {
+    border-radius: 1em;
+}
+
 body {
     background: rgb(223, 222, 208) !important;
     /* background: linear-gradient(180deg, rgba(255, 255, 255, 1) 4%, rgba(61, 242, 245, 1) 30%, rgba(23, 73, 155, 1) 100%) !important; */
