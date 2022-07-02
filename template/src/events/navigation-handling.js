@@ -33,12 +33,13 @@ export const loadPage = (page = '') => {
 
 export const renderUpload = () => {
     q(MAIN_CONTAINER).innerHTML = setUploadView();
-    document.getElementById('formFile').addEventListener('change', (event) => {
-        document.getElementById('frame').src = URL.createObjectURL(event.target.files[0]);
+    q('#formFile').addEventListener('change', (event) => {
+        q('#frame').src = URL.createObjectURL(event.target.files[0]);
+        console.log(event.target.files);
     });
 
-    document.getElementById('reset-button').addEventListener('click', (event) => {
-        document.getElementById('frame').src = '';
-        document.getElementById('formFile').value = null;
+    q('#reset-button').addEventListener('click', (event) => {
+        q('#frame').src = '';
+        q('#formFile').value = null;
     });
 };
