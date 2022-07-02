@@ -15,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPage(event.target.getAttribute('button-value'));
         };
     })
-
-    document.getElementById('formFile').addEventListener('onchange', (event) => {
-        frame.src = URL.createObjectURL(event.target.files[0]);
-    })
 });
 
 

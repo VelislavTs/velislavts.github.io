@@ -33,4 +33,12 @@ export const loadPage = (page = '') => {
 
 export const renderUpload = () => {
     q(MAIN_CONTAINER).innerHTML = setUploadView();
+    document.getElementById('formFile').addEventListener('change', (event) => {
+        document.getElementById('frame').src = URL.createObjectURL(event.target.files[0]);
+    });
+
+    document.getElementById('reset-button').addEventListener('click', (event) => {
+        document.getElementById('frame').src = '';
+        document.getElementById('formFile').value = null;
+    });
 };
