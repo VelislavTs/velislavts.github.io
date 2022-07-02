@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchQuery = '&q=' + document.getElementById('search-input').value
         renderSearchData(searchQuery); // waiting for event
     });
+
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('nav-link')) {
+            console.log(event.target.getAttribute('button-value'))
+            loadPage(event.target.getAttribute('button-value'));
+        };
+    })
 });
 
 
