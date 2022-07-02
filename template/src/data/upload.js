@@ -13,7 +13,6 @@ export const uploadGif = async (file) => {
         if (xhr.status === 201) {
             console.log(xhr.status)
         }
-        console.log(xhr.status);
     }
 }
 
@@ -23,6 +22,6 @@ const createJSONObject = (file) => {
         "username": USER_NAME,
         "file": file,
     };
-
+    console.log(obj);
     return JSON.stringify(obj);
 }
