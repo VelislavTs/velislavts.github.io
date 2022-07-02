@@ -35,27 +35,6 @@ const loadImages = async (collection) => {
 };
 
 
-
-const addImageToGrid = (path) => {
-    const div = document.createElement('div');
-    div.classList.add('grid-item');
-    const img = document.createElement('img');
-    img.src = `${path}`
-    div.appendChild(img);
-    grid.appendChild(div)
-    setMasonry();
-}
-
-const setMasonry = () => {
-    new Masonry(grid, {
-        itemSelector: '.grid-item',
-        gutter: 10,
-        originLeft: false,
-        originRight: false,
-        fitWidth: true,
-    });
-};
-
 window.addEventListener('scroll', () => {
     const {
         scrollTop,

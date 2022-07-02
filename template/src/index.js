@@ -4,7 +4,7 @@ import { renderSearchData } from "./events/search-events.js";
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search-button').addEventListener('click', () => {
         const searchQuery = '&q=' + document.getElementById('search-input').value
-        renderSearchData(searchQuery);
+        renderSearchData(searchQuery); // waiting for event
     });
 });
 

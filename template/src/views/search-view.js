@@ -1,6 +1,23 @@
-export const toSearchView = (searchResults) => {
+import {
+    addImageToGrid,
+    setMasonry
+} from "./main-view.js"
 
-    return `
-        <h1> hi </h1>
-    `
+export const toSearchView = async (searchResults) => {
+    
+    const results = await searchResults;
+    removeGrid();
+    results.forEach(imageUrl => {
+        addImageToGrid(imageUrl);
+    });
+    setTimeout(() => {
+        setMasonry()
+    }, 50);
+}
+
+const removeGrid = () => {
+    const gridItems = document.querySelectorAll('.grid-item')
+    gridItems.forEach(item => {
+        document.getElementById('grid').removeChild(item);
+    })
 }
