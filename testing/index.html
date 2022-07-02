@@ -15,7 +15,7 @@
 
 <body>
     <div id='giphinator' class='container bg-light'>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <nav class="navbar navbar-expand-md navbar-light bg-light ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="https://media4.giphy.com/media/XMgq4wclEITQjivNeV/200w.gif?cid=82a1493bijzk3ok9vvj1x4vqiofko9grt8ynwf5rhiou4os5&rid=200w.gif&ct=g"
@@ -28,13 +28,12 @@
                     <a class="nav-link active" aria-current="page" href="#">Trending</a>
                     <a class="nav-link" href="#">Favorites</a>
                     <a class="nav-link" href="#">Upload</a>
-                    <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
                 </div>
             </div>
         </nav>
         <div class="container-fluid">
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Find a specific gif" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
@@ -43,6 +42,7 @@
             <div class='col-xl-10 col-md-8' id="grid"> </div>
             <div class="col-xl-1 col-md-2"> </div>
         </div>
+        <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
     </div>
     <script src='test.js'> </script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
