@@ -6,6 +6,7 @@ import {
     TRENDING,
     UPLOAD,
 } from "../common/constants.js";
+import { sendGifForUpload } from "../requests/request-services.js";
 import {
     setUploadView
 } from "../views/upload-view.js";
@@ -13,10 +14,6 @@ import {
     q,
     setActiveNav
 } from "./helpers.js";
-import {
-    renderSearchData
-} from "./search-events.js";
-
 
 export const loadPage = (page = '') => {
     if (page === HOME) {
@@ -35,11 +32,17 @@ export const renderUpload = () => {
     q(MAIN_CONTAINER).innerHTML = setUploadView();
     q('#formFile').addEventListener('change', (event) => {
         q('#frame').src = URL.createObjectURL(event.target.files[0]);
-        console.log(event.target.files);
     });
 
-    q('#reset-button').addEventListener('click', (event) => {
+    q('#reset-button').addEventListener('click', () => {
         q('#frame').src = '';
         q('#formFile').value = null;
+    });
+
+    q('#upload-button').addEventListener('click', () => {
+        console.log(q('#formFile').files[0])
+        if (q('#formFile').files[0]) {
+            sendGifForUpload(q('#formFile').files[0]);
+        };
     });
 };

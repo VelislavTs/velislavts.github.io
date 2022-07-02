@@ -15,8 +15,6 @@
  
  export const setActiveNav = (page) => {
     const navs = qs('a.nav-link');
-  
-    console.log('hi');
     Array
       .from(navs)
       .forEach(element => 
