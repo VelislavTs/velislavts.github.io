@@ -30,7 +30,7 @@ export const uploadGif = async (file) => {
 
 const getImageSource = async (response) => {
     const key = response.data.id;
-    const fetchURL = SEARCH_REQUEST_URL + key + '?' + API_KEY;
+    const fetchURL = SEARCH_REQUEST_BY_ID_URL + key + '?' + API_KEY;
     try {
         const request = await fetch(fetchURL)
         const response = await request.json();
