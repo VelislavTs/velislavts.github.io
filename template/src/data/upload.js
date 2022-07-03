@@ -1,6 +1,6 @@
 import {
     API_KEY,
-    SEARCH_REQUEST_URL,
+    SEARCH_REQUEST_BY_ID_URL,
     UPLOAD_REQUEST_URL,
     USERNAME
 } from "../common/requests-params.js"
