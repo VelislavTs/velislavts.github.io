@@ -1,4 +1,5 @@
 import { searchGifs } from "../data/search.js";
+import { generateTrendingGifs } from "../data/trending.js";
 import { uploadGif } from "../data/upload.js";
 
 export const loadSearchData = async (searchQuery = '') => {
@@ -10,3 +11,8 @@ export const sendGifForUpload = async (file) => {
     const gifId = await uploadGif(file);
     return gifId;
 }
+
+export const loadTrendingData = async () => {
+    const trendingDataResult = await generateTrendingGifs(); 
+    return trendingDataResult;
+};
