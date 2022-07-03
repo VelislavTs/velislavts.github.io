@@ -10,3 +10,8 @@ export const sendGifForUpload = async (file) => {
     const gifId = await uploadGif(file);
     return gifId;
 }
+
+export const loadRandomGifs = async() => {
+    const randomGifsResponse = await getRandomGifs();
+    return randomGifsResponse;
+}

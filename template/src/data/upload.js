@@ -1,5 +1,5 @@
-import { USER_NAME } from "../common/constants.js"
-import { API_KEY, UPLOAD_REQUEST_URL } from "../common/requests-params.js"
+// import { USER_NAME } from "../common/constants.js"
+import { API_KEY, UPLOAD_REQUEST_URL, USERNAME } from "../common/requests-params.js"
 
 export const uploadGif = async (file) => {
     const objectToSend = createJSONObject(file);
@@ -19,7 +19,7 @@ export const uploadGif = async (file) => {
 const createJSONObject = (file) => {
     let obj = {
         "api_key": API_KEY,
-        "username": USER_NAME,
+        "username": USERNAME,
         "file": file,
     };
     console.log(obj);
