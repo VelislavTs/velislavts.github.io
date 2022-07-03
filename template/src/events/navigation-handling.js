@@ -27,15 +27,11 @@ export const renderUpload = () => {
         q('#frame').src = URL.createObjectURL(event.target.files[0]);
     });
 
-    q('#reset-button').addEventListener('click', () => {
-        q('#frame').src = '';
-        q('#formFile').value = null;
-    });
-
+    q('#reset-button').addEventListener('click', clearPreview());
     q('#upload-button').addEventListener('click', () => {
-        console.log(q('#formFile').files[0])
         if (q('#formFile').files[0]) {
             sendGifForUpload(q('#formFile').files[0]);
+            clearPreview();
         };
     });
 };
@@ -44,3 +40,8 @@ export const renderTrendingData = async () => {
     const trendingResults = await loadTrendingData();
     q(MAIN_CONTAINER).innerHTML = toTrendingView(trendingResults);
 }; 
+
+const clearPreview = () => {
+    q('#frame').src = '';
+    q('#formFile').value = null;
+}

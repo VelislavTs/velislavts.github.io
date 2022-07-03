@@ -5,7 +5,7 @@ import {
     USERNAME
 } from "../common/requests-params.js"
 
-const uploadedGifsByUser = localStorage.getItem('uploaded') || [];
+let uploadedGifs = JSON.parse(localStorage.getItem('uploaded')) || [];
 
 export const uploadGif = async (file) => {
 
@@ -22,9 +22,10 @@ export const uploadGif = async (file) => {
     const response = await fetch(fetchURL, requestOptions)
     const result = await response.json();
     const resultURL = await getImageSource(result);
-    
-    uploadedGifsByUser.push(resultURL);
-    localStorage.setItem('uploaded', uploadedGifsByUser);
+
+    uploadedGifs.push(resultURL);
+
+    localStorage.setItem('uploaded', JSON.stringify(uploadedGifs));
 }
 
 const getImageSource = async (response) => {
@@ -41,5 +42,5 @@ const getImageSource = async (response) => {
 }
 
 export const getUploadedGifs = () => {
-    return uploadedGifsByUser;
+    return uploadedGifs;
 }
