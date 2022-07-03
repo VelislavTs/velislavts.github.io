@@ -8,7 +8,6 @@ const generateRequest = async() => {
     return response;
 }
 export const getRandomGifs = async() => {
-    
     let response;
     let promises = [];
     let result = [];
@@ -17,7 +16,6 @@ export const getRandomGifs = async() => {
 
     while(currPage <= 15) {
         response = await generateRequest();
-        
         promises.push(response);
         currPage++;
     }

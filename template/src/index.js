@@ -1,6 +1,7 @@
+import { getRandomGifs } from "./data/random.js";
 import { q } from "./events/helpers.js";
 import { loadPage } from "./events/navigation-handling.js";
-import { renderHomePage2 } from "./events/random-gifs-events.js";
+import { appendToHomePage2, renderHomePage2 } from "./events/random-gifs-events.js";
 import { renderSearchData } from "./events/search-events.js";
 
 
@@ -25,6 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         renderHomePage2();
     })
 
+    window.addEventListener('scroll', () => {
+        const {
+            scrollTop,
+            scrollHeight,
+            clientHeight
+        } = document.documentElement;
+    
+        if (scrollTop + clientHeight >= scrollHeight) {
+            appendToHomePage2()
+        }
+    });
 });
 
 

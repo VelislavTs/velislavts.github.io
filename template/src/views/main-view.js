@@ -15,4 +15,4 @@ export const setMasonry = () => {
         originRight: false,
         fitWidth: true,
     });
-};
+}
