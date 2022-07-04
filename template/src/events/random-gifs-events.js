@@ -15,7 +15,8 @@ export const renderHomePage = async(searchQuery) => {
 export const renderHomePage2 = async () => {
     const randomGifs = await getRandomGifs();
     
-    q(MAIN_CONTAINER).innerHTML = toHomeView(randomGifs);
+   let mainContainer = q(MAIN_CONTAINER).innerHTML;
+   mainContainer = await toHomeView(randomGifs);
 }
 
 export const appendToHomePage2 = async () => {
