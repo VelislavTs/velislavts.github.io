@@ -2,7 +2,7 @@ import { renderFavoriteStatus } from "../events/favorite-events.js";
 
 export const addImageToGrid = (path) => {
     const div = document.createElement('div');
-    div.classList.add('grid-item');
+    div.classList.add('grid-item'); 
     const img = document.createElement('img');
     // const btn = renderFavoriteStatus();
     img.src = `${path}`
@@ -18,4 +18,14 @@ export const setMasonry = () => {
         originRight: false,
         fitWidth: true,
     });
+}
+
+export const addTextToGrid = (searchQuery = '') => {
+    const h2 = document.createElement('h2');
+    h2.classList.add('search-div');
+    
+    const text = `Search results for ${searchQuery}`
+    const div = document.querySelector('#search-div')
+    h2.innerText = text;
+    div.appendChild(h2);
 }

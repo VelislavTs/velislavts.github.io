@@ -1,12 +1,16 @@
 import {
     addImageToGrid,
-    setMasonry
+    setMasonry,
+    addTextToGrid
 } from "./main-view.js"
 
-export const toSearchView = async (searchResults) => {
+export const toSearchView = async (searchResults, searchQuery) => {
     
     const results = await searchResults;
     removeGrid();
+    const query = await searchQuery;
+
+    addTextToGrid(query)
     results.forEach(imageUrl => {
         addImageToGrid(imageUrl);
     });
