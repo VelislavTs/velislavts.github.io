@@ -5,7 +5,10 @@ import { q } from "./helpers.js"
 
 export const renderSearchData = async(searchQuery) => {
     const searchResults = await loadSearchData(searchQuery) // array with gifs matching search n = 25
+    let mainContainer = q(MAIN_CONTAINER).innerHTML;
+    const searchView = await toSearchView(searchResults, searchQuery);
+
     // container -> set innerHTML => SearchView(searchResults) -> forEach -> Masonry
-    q(MAIN_CONTAINER).innerHTML = toSearchView(searchResults, searchQuery);
+    mainContainer = searchView;
     // forEach => gridElements => masonry
 }; 
