@@ -18,7 +18,7 @@ export const setUploadView = () => {
     </div> 
     
     <h2 style = "text-align:center"> Your uploaded GIFs </h2>
-    <div class = 'container-fluid col-md-10 align="center"' id="grid">
+    <div class = 'container-fluid col-md-12 align="center"' id="grid">
         <div class = 'row'  data-masonry='{}> 
         ${setUploadedGifs()}
         </div>
