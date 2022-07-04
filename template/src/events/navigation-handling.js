@@ -18,7 +18,6 @@ export const loadPage = (page = '') => {
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
     } else if (page === UPLOAD) {
-        // takes care of uploaded items ending in the middle of the screen
         q('#grid').style.height = "50px"; 
         setActiveNav(UPLOAD);
         renderUpload();

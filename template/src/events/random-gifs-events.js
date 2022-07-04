@@ -1,9 +1,12 @@
 import { MAIN_CONTAINER } from "../common/constants.js";
 import { getRandomGifs } from "../data/random.js";
 import { toHomeView } from "../views/home-view.js";
+import { removeGrid } from "../views/search-view.js";
 import { q } from "./helpers.js"
 
 export const renderHomePage2 = async () => {
+    
+    removeGrid();
     const randomGifs = await getRandomGifs();
     let mainContainer = q(MAIN_CONTAINER).innerHTML;
     const homeView = await toHomeView(randomGifs);
