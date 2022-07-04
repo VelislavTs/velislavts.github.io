@@ -1,11 +1,12 @@
 import { getRandomGifs } from "./data/random.js";
-import { q } from "./events/helpers.js";
+import { q, qs } from "./events/helpers.js";
 import { loadPage } from "./events/navigation-handling.js";
 import { appendToHomePage2, renderHomePage2 } from "./events/random-gifs-events.js";
 import { renderSearchData } from "./events/search-events.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
     renderHomePage2();
     document.getElementById('search-button').addEventListener('click', () => {
         const searchQuery = '&q=' + document.getElementById('search-input').value
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } = document.documentElement;
 
         if (scrollTop + clientHeight >= scrollHeight) {
+            // TODO this should happen only when in home page 
             appendToHomePage2()
         }
     });

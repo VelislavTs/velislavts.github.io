@@ -15,7 +15,7 @@ export const toSearchView = async (searchResults) => {
     }, 50);
 }
 
-const removeGrid = () => {
+export const removeGrid = () => {
     const gridItems = document.querySelectorAll('.grid-item')
     gridItems.forEach(item => {
         document.getElementById('grid').removeChild(item);

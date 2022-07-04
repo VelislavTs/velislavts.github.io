@@ -5,10 +5,12 @@ import { loadTrendingData, sendGifForUpload } from "../requests/request-services
 import { toTrendingView } from "../views/trending-view.js";
 import { setUploadView } from "../views/upload-view.js";
 import { q, setActiveNav } from "./helpers.js";
+import { renderHomePage2 } from "./random-gifs-events.js";
 
 export const loadPage = (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
+        console.log('im here');
         renderHomePage2();
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
@@ -16,7 +18,6 @@ export const loadPage = (page = '') => {
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
     } else if (page === UPLOAD) {
-        // takes care of uploaded items ending in the middle of the screen
         q('#grid').style.height = "50px"; 
         setActiveNav(UPLOAD);
         renderUpload();
@@ -29,7 +30,9 @@ export const renderUpload = () => {
         q('#frame').src = URL.createObjectURL(event.target.files[0]);
     });
 
-    q('#reset-button').addEventListener('click', clearPreview());
+    q('#reset-button').addEventListener('click', () => {
+        clearPreview();
+    });
     q('#upload-button').addEventListener('click', () => {
         if (q('#formFile').files[0]) {
             sendGifForUpload(q('#formFile').files[0]);
