@@ -17,10 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //console.log(event.target.getAttribute('button-value'))
             loadPage(event.target.getAttribute('button-value'));
         };
-        if (event.target.classList.contains('nav-link')) {
-            loadPage(event.target.getAttribute('button-value'));
-        };
-    })
+    });
 
     document.getElementById('navbar-brand-btn').addEventListener('click', () => {
         renderHomePage2();
@@ -32,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollHeight,
             clientHeight
         } = document.documentElement;
-    
+
         if (scrollTop + clientHeight >= scrollHeight) {
             appendToHomePage2()
         }
