@@ -22,7 +22,7 @@ export const getRandomGifs = async() => {
     const data = await Promise.allSettled(promises);
     
     data.forEach((el) => {
-        const url = el.value.data.images.downsized.url
+        const url = el.value.data.images.downsized.url || el.value.data.images.medium.url || el.value.data.images.large.url
         result.push(url);
     })
     
