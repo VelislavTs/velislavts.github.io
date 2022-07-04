@@ -11,7 +11,7 @@ export const uploadGif = async (file) => {
 
     const formData = new FormData();
     formData.append("file", file);
-
+    
     const fetchURL = UPLOAD_REQUEST_URL + API_KEY + USERNAME
     var requestOptions = {
         method: 'POST',
@@ -42,5 +42,5 @@ const getImageSource = async (response) => {
 }
 
 export const getUploadedGifs = () => {
-    return uploadedGifs;
+    return [...uploadedGifs];
 }
