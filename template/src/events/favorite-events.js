@@ -1,17 +1,16 @@
 import { EMPTY_HEART, FULL_HEART } from '../common/constants.js';
-import { addFavorite, getFavorites, removeFavorite } from '../data/favorites.js';
+import { addFavorite, getFavorites, removeFavorite } from '../data/favorite.js';
 import { q } from './helpers.js';
 
-export const toggleFavoriteStatus = (gifId) => {
+export const toggleFavoriteStatus = (id) => {
   const favorites = getFavorites();
-  const heartSpan = q(`span[data-gif-id="${gifId}"]`);
-//   console.log(heartSpan)
-  if (favorites.includes(gifId)) {
-    removeFavorite(gifId);
+  const heartSpan = q(`span[data-gif-id="${id}"]`);
+  if (favorites.includes(id)) {
+    removeFavorite(id);
     heartSpan.classList.remove('active')
     heartSpan.innerHTML = EMPTY_HEART;
   } else {
-    addFavorite(gifId);
+    addFavorite(id);
     heartSpan.classList.add('active');
     heartSpan.innerHTML = FULL_HEART;
   }

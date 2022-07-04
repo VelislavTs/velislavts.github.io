@@ -1,4 +1,5 @@
 import { getRandomGifs } from "./data/random.js";
+import { toggleFavoriteStatus } from "./events/favorite-events.js";
 import { q, qs } from "./events/helpers.js";
 import { loadPage } from "./events/navigation-handling.js";
 import { appendToHomePage2, renderHomePage2 } from "./events/random-gifs-events.js";
@@ -15,8 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('nav-link')) {
-            //console.log(event.target.getAttribute('button-value'))
             loadPage(event.target.getAttribute('button-value'));
+        };
+        
+        if(event.target.classList.contains('favorite')){
+            toggleFavoriteStatus(event.target.getAttribute('data-gif-id'));
         };
     });
 

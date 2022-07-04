@@ -1,6 +1,7 @@
 import {
     ABOUT, FAVORITES, HOME, MAIN_CONTAINER, TRENDING, UPLOAD,
 } from "../common/constants.js";
+import { getFavorites } from "../data/favorite.js";
 import { loadTrendingData, sendGifForUpload } from "../requests/request-services.js";
 import { toTrendingView } from "../views/trending-view.js";
 import { setUploadView } from "../views/upload-view.js";
@@ -16,6 +17,9 @@ export const loadPage = (page = '') => {
         renderTrendingData();
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
+        // redner fn for favorite
+        renderFavorites();
+
     } else if (page === UPLOAD) {
         q('#grid').style.height = "50px";
         setActiveNav(UPLOAD);
@@ -51,3 +55,12 @@ const clearPreview = () => {
     q('#frame').src = '';
     q('#formFile').value = null;
 }
+
+export const renderFavorites = async () => {
+    // q(MAIN_CONTAINER).innerHTML = toFavoriteView(getFavorites());
+    try {
+        await toFavoriteView(getFavorites())
+    } catch (error) {
+        alert(error)
+    }
+};

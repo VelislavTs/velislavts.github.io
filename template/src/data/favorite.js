@@ -5,7 +5,6 @@ export const addFavorite = (gifId) => {
     // Gif has already been added to favorites
     return;
   }
-
   favorites.push(gifId);
   localStorage.setItem('favorites', JSON.stringify(favorites));
 };
