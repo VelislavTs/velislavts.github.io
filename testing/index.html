@@ -17,17 +17,34 @@
     <div id='giphinator' class='container bg-light'>
         <nav class="navbar navbar-expand-md navbar-light bg-light ">
             <div class="container-fluid">
-                <a class="navbar-brand" id="navbar-brand-btn" href="#">
+                <a class="navbar-brand" id="navbar-brand-btn"href="#">
                     <img src="https://media4.giphy.com/media/XMgq4wclEITQjivNeV/200w.gif?cid=82a1493bijzk3ok9vvj1x4vqiofko9grt8ynwf5rhiou4os5&rid=200w.gif&ct=g"
                         alt="" width="60" height="60" class="d-inline-block align-text-top">
                     <h1 class="d-inline-block align-text-top"> Giphinator </h1>
                 </a>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav" style="justify-content: right;">
-                    <a class="nav-link" aria-current="page" button-value='trending'>Trending</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse collapse justify-content-end" id="navbarSupportedContent"  >
+                <div class="navbar-nav " style="justify-content: right;" >
+                    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" button-value='trending'>Trending</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" button-value='favorites'>Favorites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" button-value='upload'> Upload</a>
+                        </li>
+
+                    <!-- <a class="nav-link active" aria-current="page" button-value='trending'>Trending</a>
                     <a class="nav-link" button-value='favorites'>Favorites</a>
-                    <a class="nav-link" button-value='upload'> Upload</a>
+                    <a class="nav-link" button-value='upload'> Upload</a> id="navbarNavAltMarkup"-->
                 </div>
             </div>
         </nav>
