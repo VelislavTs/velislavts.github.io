@@ -10,7 +10,6 @@ import { renderHomePage2 } from "./random-gifs-events.js";
 export const loadPage = (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
-        console.log('im here');
         renderHomePage2();
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
@@ -18,7 +17,7 @@ export const loadPage = (page = '') => {
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
     } else if (page === UPLOAD) {
-        q('#grid').style.height = "50px"; 
+        q('#grid').style.height = "50px";
         setActiveNav(UPLOAD);
         renderUpload();
     }
@@ -43,8 +42,10 @@ export const renderUpload = () => {
 
 export const renderTrendingData = async () => {
     const trendingResults = await loadTrendingData();
-    q(MAIN_CONTAINER).innerHTML = toTrendingView(trendingResults);
-}; 
+    let mainContainer = q(MAIN_CONTAINER).innerHTML
+    const trendingView = await toTrendingView(trendingResults);
+    mainContainer = trendingView;
+};
 
 const clearPreview = () => {
     q('#frame').src = '';
