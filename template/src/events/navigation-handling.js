@@ -18,9 +18,7 @@ export const loadPage = (page = '') => {
         renderTrendingData();
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
-        // redner fn for favorite
         renderFavorites();
-
     } else if (page === UPLOAD) {
         q('#grid').style.height = "50px";
         setActiveNav(UPLOAD);

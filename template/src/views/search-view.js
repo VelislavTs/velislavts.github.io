@@ -1,3 +1,4 @@
+import { q } from "../events/helpers.js";
 import {
     addImageToGrid,
     setMasonry,
@@ -22,10 +23,10 @@ export const toSearchView = async (searchResults, searchQuery) => {
 }
 
 export const removeGrid = () => {
-    const gridItems = document.querySelectorAll('.grid-item')
-    gridItems.forEach(item => {
-        document.getElementById('grid').removeChild(item);
-    })
+    const parent = q('#grid');
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
 
 export const removeText = () => {
