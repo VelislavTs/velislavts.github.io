@@ -12,7 +12,7 @@ export const toSearchView = async (searchResults, searchQuery) => {
     
     if(document.querySelector('#search-text') ) removeText();
     addTextToGrid(query)
-    results.forEach(imageUrl => {
+    results.data.forEach(imageUrl => {
         addImageToGrid(imageUrl);
     });
     setTimeout(() => {

@@ -2,7 +2,7 @@ import { API_KEY, RATING , RANDOM_REQUEST_URL } from "../common/requests-params.
 
 // https://api.giphy.com/v1/gifs/random?api_key=m2h3bY3cGXyBHla3bhM7gIP64RY97yJg&tag=&rating=g
 
-const getSingleGif = async() => {
+export const getSingleGif = async() => {
     let apiCall = await fetch(RANDOM_REQUEST_URL + API_KEY + RATING);
     let response = await apiCall.json();
     return response;
@@ -22,10 +22,9 @@ export const getRandomGifs = async() => {
     const data = await Promise.allSettled(promises);
     
     data.forEach((el) => {
-        const url = el.value.data.images.downsized.url || el.value.data.images.medium.url || el.value.data.images.large.url
-        result.push(url);
+        result.push(el);
     })
     
-    return result;
+    return data;
 }
 

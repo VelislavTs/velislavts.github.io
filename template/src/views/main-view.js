@@ -7,9 +7,13 @@ export const addImageToGrid = (gifData) => {
     const btn = renderFavoriteStatus(gifData.id);
     const heart = document.createElement('button')
     heart.innerHTML += btn;
-    // console.log(btn);
-    // console.log(path);
-    img.src = `${gifData.images.downsized.url}`
+   
+    try{
+        img.src = `${gifData.images.downsized.url}`
+    }catch (e) {
+        img.src = `${gifData.value.data.images.downsized.url}`
+    }
+
     div.appendChild(img);
     div.appendChild(heart);
     grid.appendChild(div)
