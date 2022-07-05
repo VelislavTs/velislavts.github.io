@@ -5,8 +5,8 @@ import { removeGrid } from "./search-view.js";
 export const toTrendingView = async (trendingResults) => {
     removeGrid();
     const results = await trendingResults;
-    results.forEach(imageUrl => {
-        addImageToGrid(imageUrl);
+    results.data.forEach(gifData => {
+        addImageToGrid(gifData);
     });
     setTimeout(() => {
         setMasonry()

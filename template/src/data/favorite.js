@@ -1,3 +1,5 @@
+import { API_KEY, GET_GIF_BY_IDS } from "../common/requests-params.js";
+
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 export const addFavorite = (gifId) => {
@@ -15,3 +17,9 @@ export const removeFavorite = (gifId) => {
 };
 
 export const getFavorites = () => [...favorites];
+
+export const getFavoriteGifsById = async (ids) => {
+  const request = await fetch(GET_GIF_BY_IDS + API_KEY + '&ids=' + ids);
+  const response = await request.json();
+  return response;
+};
