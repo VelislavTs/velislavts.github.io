@@ -1,6 +1,5 @@
 import { qs } from "../events/helpers.js";
-import { addImageToGrid, setMasonryView } from "./main-view.js"
-import { removeGrid } from "./search-view.js";
+import { addImageToGrid, removeGrid, setMasonryView } from "./main-view.js"
 
 
 export const toTrendingView = async (trendingResults) => {

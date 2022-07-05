@@ -1,6 +1,6 @@
 import { getUploadedGifs } from "../data/upload.js"
 import { q } from "../events/helpers.js";
-import { setMasonry, setMasonryView } from "./main-view.js";
+import { removeGrid, setMasonry, setMasonryView } from "./main-view.js";
 
 export const setUploadView = () => {
     return `
@@ -29,6 +29,7 @@ export const setUploadView = () => {
 
 
 const setUploadedGifs = () => {
+    removeGrid();
     const uploadedGifsByUser = getUploadedGifs();
     let result = '';
     uploadedGifsByUser.forEach(gif => {

@@ -1,10 +1,9 @@
 import { renderFavoriteStatus } from "../events/favorite-events.js";
-import { qs } from "../events/helpers.js";
+import { q, qs } from "../events/helpers.js";
 
 export const addImageToGrid = (gifData) => {
     const div = document.createElement('div');
     div.classList.add('grid-item');
-    console.log('hi');
     const img = document.createElement('img');
     img.style.visibility = "hidden";
     const btn = renderFavoriteStatus(gifData.id);
@@ -54,4 +53,10 @@ export const addTextToGrid = (searchQuery = '') => {
     h2.innerText = text;
     h2.setAttribute('id', 'search-text');
     div.appendChild(h2);
+}
+export const removeGrid = () => {
+    const parent = q('#grid');
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }

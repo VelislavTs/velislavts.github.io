@@ -1,6 +1,7 @@
 import { q, qs } from "../events/helpers.js";
 import {
     addImageToGrid,
+    removeGrid,
     setMasonry,
     setMasonryView
 } from "./main-view.js"

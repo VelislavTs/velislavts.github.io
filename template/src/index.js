@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if(document.querySelector('#search-text') ) removeText();
     renderHomePage();
     document.getElementById('search-button').addEventListener('click', () => {
+        
+        qs('.nav-link').forEach(el => el.classList.remove('active'));
+
         const searchQuery = '&q=' + document.getElementById('search-input').value
         renderSearchData(searchQuery); // waiting for event
     });

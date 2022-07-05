@@ -17,23 +17,25 @@
     <div id='giphinator' class='container bg-light'>
         <nav class="navbar navbar-expand-md navbar-light bg-light ">
             <div class="container-fluid">
-                <a class="navbar-brand" id="navbar-brand-btn"href="#">
+                <a class="navbar-brand" id="navbar-brand-btn" href="#">
                     <img src="https://media4.giphy.com/media/XMgq4wclEITQjivNeV/200w.gif?cid=82a1493bijzk3ok9vvj1x4vqiofko9grt8ynwf5rhiou4os5&rid=200w.gif&ct=g"
                         alt="" width="60" height="60" class="d-inline-block align-text-top">
                     <h1 class="d-inline-block align-text-top"> Giphinator </h1>
                 </a>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
+            </button>
 
-            <div class="collapse navbar-collapse collapse justify-content-end" id="navbarSupportedContent"  >
-                <div class="navbar-nav " style="justify-content: right;" >
-                    
+            <div class="collapse navbar-collapse collapse justify-content-end" id="navbarSupportedContent">
+                <div class="navbar-nav " style="justify-content: right;">
+
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" button-value='home'> Home </a>
+                            <a class="nav-link" button-value='home'> Home </a>
                         </li>
 
                         <li class="nav-item ">
@@ -49,11 +51,14 @@
             </div>
         </nav>
         <div class="container-fluid" id="search-div">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" id="search-input" placeholder="Find a specific gif"
-                    aria-label="Search">
-                <button class="btn btn-outline-success" id='search-button' type="submit">Search</button>
-            </form>
+            <div class='row'>
+                <div class='col-md-10 col-xs-12'> <input class="form-control me-2" id="search-input"
+                        placeholder="Find a specific gif" aria-label="Search">
+                </div>
+                <div class = 'col-md-2 col-xs-12'> 
+                    <span class="btn btn-outline-success" id='search-button'>Search</span>
+                </div>
+            </div>
         </div>
         <div class="row" id="upload-box">
 
@@ -71,7 +76,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 </body>
 
 </html>
