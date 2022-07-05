@@ -10,7 +10,7 @@ export const toSearchView = async (searchResults, searchQuery) => {
     const query = await searchQuery;
     removeGrid();
     
-    if(document.querySelector('#search-text')) removeText();
+    if(document.querySelector('#search-text') ) removeText();
     addTextToGrid(query)
     results.forEach(imageUrl => {
         addImageToGrid(imageUrl);

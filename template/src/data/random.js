@@ -2,7 +2,7 @@ import { API_KEY, RATING , RANDOM_REQUEST_URL } from "../common/requests-params.
 
 // https://api.giphy.com/v1/gifs/random?api_key=m2h3bY3cGXyBHla3bhM7gIP64RY97yJg&tag=&rating=g
 
-const generateRequest = async() => {
+const getSingleGif = async() => {
     let apiCall = await fetch(RANDOM_REQUEST_URL + API_KEY + RATING);
     let response = await apiCall.json();
     return response;
@@ -15,7 +15,7 @@ export const getRandomGifs = async() => {
     let currPage = 1;
 
     while(currPage <= 15) {
-        response = await generateRequest();
+        response = await getSingleGif();
         promises.push(response);
         currPage++;
     }

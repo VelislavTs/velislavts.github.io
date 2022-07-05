@@ -6,12 +6,12 @@ import { loadTrendingData, sendGifForUpload } from "../requests/request-services
 import { toTrendingView } from "../views/trending-view.js";
 import { setUploadView } from "../views/upload-view.js";
 import { q, setActiveNav } from "./helpers.js";
-import { renderHomePage2 } from "./random-gifs-events.js";
+import { renderHomePage } from "./random-gifs-events.js";
 
 export const loadPage = (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
-        renderHomePage2();
+        renderHomePage();
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
         renderTrendingData();

@@ -2,13 +2,13 @@ import { getRandomGifs } from "./data/random.js";
 import { toggleFavoriteStatus } from "./events/favorite-events.js";
 import { q, qs } from "./events/helpers.js";
 import { loadPage } from "./events/navigation-handling.js";
-import { appendToHomePage2, renderHomePage2 } from "./events/random-gifs-events.js";
+import { appendToHomePage, renderHomePage } from "./events/random-gifs-events.js";
 import { renderSearchData } from "./events/search-events.js";
-
+import { removeText } from "./views/search-view.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    renderHomePage2();
+    if(document.querySelector('#search-text') ) removeText();
+    renderHomePage();
     document.getElementById('search-button').addEventListener('click', () => {
         const searchQuery = '&q=' + document.getElementById('search-input').value
         renderSearchData(searchQuery); // waiting for event
@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('nav-link')) {
+            if(document.querySelector('#search-text') ) removeText();
             loadPage(event.target.getAttribute('button-value'));
+
         };
         
         if(event.target.classList.contains('favorite')){
@@ -25,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('navbar-brand-btn').addEventListener('click', () => {
-        renderHomePage2();
+        if(document.querySelector('#search-text') ) removeText();
+        renderHomePage();
     })
 
     window.addEventListener('scroll', () => {
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (scrollTop + clientHeight >= scrollHeight) {
             // TODO this should happen only when in home page 
-            appendToHomePage2()
+            appendToHomePage()
         }
     });
 });

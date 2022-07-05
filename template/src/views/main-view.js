@@ -22,6 +22,7 @@ export const setMasonry = () => {
 
 export const addTextToGrid = (searchQuery = '') => {
     const h2 = document.createElement('h2');
+   
     const query = searchQuery.substring(3)
     const text = `Search results for ${query}`
     const div = document.querySelector('#search-div')
