@@ -1,3 +1,4 @@
+import { HOME } from "./common/constants.js";
 import { getRandomGifs } from "./data/random.js";
 import { toggleFavoriteStatus } from "./events/favorite-events.js";
 import { q, qs } from "./events/helpers.js";
@@ -39,8 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } = document.documentElement;
 
         if (scrollTop + clientHeight >= scrollHeight) {
-            // TODO this should happen only when in home page 
-            appendToHomePage()
+            if(q('.nav-link').classList.value === 'nav-link active') {
+                appendToHomePage();
+            }
         }
     });
 });
