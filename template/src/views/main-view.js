@@ -53,6 +53,7 @@ export const addTextToGrid = (searchQuery = '') => {
     h2.innerText = text;
     h2.setAttribute('id', 'search-text');
     div.appendChild(h2);
+    q('#search-input').value = '';
 }
 export const removeGrid = () => {
     const parent = q('#grid');
