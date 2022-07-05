@@ -1,8 +1,9 @@
 import {
     ABOUT, FAVORITES, HOME, MAIN_CONTAINER, TRENDING, UPLOAD,
 } from "../common/constants.js";
-import { getFavorites } from "../data/favorite.js";
+import { getFavoriteGifsById, getFavorites } from "../data/favorite.js";
 import { loadTrendingData, sendGifForUpload } from "../requests/request-services.js";
+import { toFavoriteView } from "../views/favorite-view.js";
 import { toTrendingView } from "../views/trending-view.js";
 import { setUploadView } from "../views/upload-view.js";
 import { q, setActiveNav } from "./helpers.js";
@@ -57,10 +58,10 @@ const clearPreview = () => {
 }
 
 export const renderFavorites = async () => {
-    // q(MAIN_CONTAINER).innerHTML = toFavoriteView(getFavorites());
-    try {
-        await toFavoriteView(getFavorites())
-    } catch (error) {
-        alert(error)
-    }
+    const favoriteGifsIds = getFavorites().join(',');
+    const result = await getFavoriteGifsById(favoriteGifsIds);
+    let mainContainer = q(MAIN_CONTAINER).innerHTML;
+    const favorites = await toFavoriteView(result);
+    mainContainer = favorites;
+    // view all liked gif-s / or one random 
 };
