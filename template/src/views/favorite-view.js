@@ -1,4 +1,5 @@
-import { addImageToGrid, setMasonry } from "./main-view.js"
+import { qs } from "../events/helpers.js";
+import { addImageToGrid, setMasonry, setMasonryView } from "./main-view.js"
 import { removeGrid } from "./search-view.js";
 
 export const toFavoriteView = async (favorite) => {
@@ -7,7 +8,5 @@ export const toFavoriteView = async (favorite) => {
     results.data.forEach(gifData => {
         addImageToGrid(gifData);
     });
-    setTimeout(() => {
-        setMasonry()
-    }, 50);
+    setMasonryView(500);
 };

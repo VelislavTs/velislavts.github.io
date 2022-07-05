@@ -1,12 +1,16 @@
 import { renderFavoriteStatus } from "../events/favorite-events.js";
+import { qs } from "../events/helpers.js";
 
 export const addImageToGrid = (gifData) => {
     const div = document.createElement('div');
     div.classList.add('grid-item');
+    console.log('hi');
     const img = document.createElement('img');
+    img.style.visibility = "hidden";
     const btn = renderFavoriteStatus(gifData.id);
     const heart = document.createElement('button')
     heart.innerHTML += btn;
+    heart.style.visibility = 'hidden';
    
     try{
         img.src = `${gifData.images.downsized.url}`
@@ -19,6 +23,18 @@ export const addImageToGrid = (gifData) => {
     grid.appendChild(div)
 }
 
+
+export const setMasonryView = (timeout = 3000) => {
+    setTimeout(() => {
+        setMasonry()
+        const gridItems = qs('.grid-item')
+        gridItems.forEach(el => {
+            el.childNodes.forEach(child => {
+                child.style.visibility = 'visible'
+            })
+        })
+    }, timeout);
+}
 export const setMasonry = () => {
     new Masonry(grid, {
         itemSelector: '.grid-item',

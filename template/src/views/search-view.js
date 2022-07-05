@@ -1,8 +1,9 @@
-import { q } from "../events/helpers.js";
+import { q, qs } from "../events/helpers.js";
 import {
     addImageToGrid,
     setMasonry,
-    addTextToGrid
+    addTextToGrid,
+    setMasonryView
 } from "./main-view.js"
 
 export const toSearchView = async (searchResults, searchQuery) => {
@@ -16,10 +17,7 @@ export const toSearchView = async (searchResults, searchQuery) => {
     results.data.forEach(imageUrl => {
         addImageToGrid(imageUrl);
     });
-    setTimeout(() => {
-        setMasonry()
-    }, 50);
-    
+    setMasonryView();
 }
 
 export const removeGrid = () => {

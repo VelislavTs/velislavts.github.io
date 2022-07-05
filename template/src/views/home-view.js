@@ -1,6 +1,8 @@
+import { q, qs } from "../events/helpers.js";
 import {
     addImageToGrid,
-    setMasonry
+    setMasonry,
+    setMasonryView
 } from "./main-view.js"
 
 export const toHomeView = async (randomGifs) => {
@@ -9,7 +11,6 @@ export const toHomeView = async (randomGifs) => {
     results.forEach(imageUrl => {
         addImageToGrid(imageUrl);
     });
-    setTimeout(() => {
-        setMasonry()
-    }, 50);
+
+    setMasonryView();
 }

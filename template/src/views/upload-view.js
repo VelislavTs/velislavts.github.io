@@ -1,5 +1,6 @@
 import { getUploadedGifs } from "../data/upload.js"
 import { q } from "../events/helpers.js";
+import { setMasonry, setMasonryView } from "./main-view.js";
 
 export const setUploadView = () => {
     return `
@@ -33,17 +34,6 @@ const setUploadedGifs = () => {
     uploadedGifsByUser.forEach(gif => {
         result += `\n <img src = ${gif} class = 'grid-item'> </img>`
     });
-    setMasonryUploaded();
+    setMasonryView();
     return result;
 }
-
-const uploadedImages = q('#grid');
-const setMasonryUploaded = () => {
-    new Masonry(uploadedImages, {
-        itemSelector: '.grid-item',
-        gutter: 10,
-        originLeft: false,
-        originRight: false,
-        fitWidth: false,
-    });
-};
