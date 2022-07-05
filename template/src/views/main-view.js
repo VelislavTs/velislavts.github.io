@@ -27,10 +27,10 @@ export const setMasonry = () => {
 
 export const addTextToGrid = (searchQuery = '') => {
     const h2 = document.createElement('h2');
-    h2.classList.add('search-div');
-
-    const text = `Search results for ${searchQuery}`
+    const query = searchQuery.substring(3)
+    const text = `Search results for ${query}`
     const div = document.querySelector('#search-div')
     h2.innerText = text;
+    h2.setAttribute('id', 'search-text');
     div.appendChild(h2);
 }

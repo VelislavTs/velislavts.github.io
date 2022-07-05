@@ -7,9 +7,10 @@ import {
 export const toSearchView = async (searchResults, searchQuery) => {
     
     const results = await searchResults;
-    removeGrid();
     const query = await searchQuery;
-
+    removeGrid();
+    
+    if(document.querySelector('#search-text')) removeText();
     addTextToGrid(query)
     results.forEach(imageUrl => {
         addImageToGrid(imageUrl);
@@ -17,6 +18,7 @@ export const toSearchView = async (searchResults, searchQuery) => {
     setTimeout(() => {
         setMasonry()
     }, 50);
+    
 }
 
 export const removeGrid = () => {
@@ -24,4 +26,9 @@ export const removeGrid = () => {
     gridItems.forEach(item => {
         document.getElementById('grid').removeChild(item);
     })
+}
+
+export const removeText = () => {
+    const text = document.querySelector('#search-text');
+    document.getElementById('search-div').removeChild(text);
 }
