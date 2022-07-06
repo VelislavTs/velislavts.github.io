@@ -14,8 +14,10 @@ export const addImageToGrid = (gifData) => {
     const img = document.createElement('img');
     const divInner = document.createElement('div');
     divInner.classList.add('inner-div-details');
-    const heartButton = document.createElement('button');
+    const heartButton = document.createElement('span');
+    heartButton.classList.add('heart-holder');
     const placeholderForTitle = document.createElement('span');
+    placeholderForTitle.classList.add('title-holder');
     let buttonForHeart;
     let gifTitle;
 
