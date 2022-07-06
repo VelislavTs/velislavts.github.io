@@ -1,6 +1,12 @@
-import { renderFavoriteStatus } from "../events/favorite-events.js";
-import { q, qs } from "../events/helpers.js";
+import {
+    renderFavoriteStatus
+} from "../events/favorite-events.js";
+import {
+    q,
+    qs
+} from "../events/helpers.js";
 
+const grid = q('#grid');
 export const addImageToGrid = (gifData) => {
     const div = document.createElement('div');
     div.classList.add('grid-item');
@@ -50,6 +56,7 @@ export const setMasonryView = (timeout = 3000) => {
             })
         })
         q('#grid').style.display = 'flex'
+        q('#grid').style.visibility = 'visible';
         q('#loading-screen').style.display = 'none';
     }, timeout);
 }
