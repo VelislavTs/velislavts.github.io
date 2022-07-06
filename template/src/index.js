@@ -1,5 +1,3 @@
-import { HOME } from "./common/constants.js";
-import { getRandomGifs } from "./data/random.js";
 import { toggleFavoriteStatus } from "./events/favorite-events.js";
 import { q, qs } from "./events/helpers.js";
 import { loadPage } from "./events/navigation-handling.js";

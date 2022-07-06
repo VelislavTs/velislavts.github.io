@@ -5,7 +5,7 @@ export const addImageToGrid = (gifData) => {
     const div = document.createElement('div');
     div.classList.add('grid-item');
     const img = document.createElement('img');
-    img.style.visibility = "hidden";
+    img.style.display = "hidden";
     const btn = renderFavoriteStatus(gifData.id);
     const heart = document.createElement('button')
     heart.innerHTML += btn;
@@ -32,6 +32,8 @@ export const setMasonryView = (timeout = 3000) => {
                 child.style.visibility = 'visible'
             })
         })
+        q('#grid').style.visibility = 'visible'
+        q('#loading-screen').style.display = 'none';
     }, timeout);
 }
 export const setMasonry = () => {
