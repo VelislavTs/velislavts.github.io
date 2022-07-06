@@ -1,5 +1,5 @@
 import { getUploadedGifs } from "../data/upload.js"
-import { q } from "../events/helpers.js";
+import { q, qs } from "../events/helpers.js";
 import { removeGrid, setMasonry, setMasonryView } from "./main-view.js";
 
 export const setUploadView = () => {
@@ -19,9 +19,9 @@ export const setUploadView = () => {
     </div> 
     
     <h2 style = "text-align:center"> Your uploaded GIFs </h2>
-    <div class = 'container-fluid col-md-12 align="center"' id="grid">
-        <div class = 'row'  data-masonry='{}> 
-        ${setUploadedGifs()}
+    <div class = 'container-fluid col-md-12 align="center"' id="image-grid">
+        <div class = 'row' id = 'images'> 
+            ${setUploadedGifs()}
         </div>
     </div> 
     `
@@ -33,8 +33,8 @@ const setUploadedGifs = () => {
     const uploadedGifsByUser = getUploadedGifs();
     let result = '';
     uploadedGifsByUser.forEach(gif => {
-        result += `\n <img src = ${gif} class = 'grid-item'> </img>`
+        result += `\n <img src = '${gif}' class = 'grid-item'>`
     });
     setMasonryView();
     return result;
-}
+};
