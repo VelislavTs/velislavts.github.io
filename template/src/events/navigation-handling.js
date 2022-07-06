@@ -12,12 +12,15 @@ import { renderHomePage } from "./random-gifs-events.js";
 export const loadPage = (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
+        q('#loading-screen').style.display = 'flex';
         renderHomePage();
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
+        q('#loading-screen').style.display = 'flex';
         renderTrendingData();
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
+        q('#loading-screen').style.display = 'flex';
         renderFavorites();
     } else if (page === UPLOAD) {
         q('#grid').style.height = "50px";

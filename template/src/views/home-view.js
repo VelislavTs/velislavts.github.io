@@ -13,5 +13,6 @@ export const toHomeView = async (randomGifs) => {
         addImageToGrid(imageUrl);
     });
 
+    q('#grid').style.visibility = 'hidden';
     setMasonryView();
 }

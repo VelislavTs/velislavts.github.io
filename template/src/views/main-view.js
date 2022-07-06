@@ -29,9 +29,11 @@ export const setMasonryView = (timeout = 3000) => {
         const gridItems = qs('.grid-item')
         gridItems.forEach(el => {
             el.childNodes.forEach(child => {
-                child.style.visibility = 'visible'
+                child.style.visibility = "visible";
             })
         })
+        q('#grid').style.display = 'flex'
+        q('#loading-screen').style.display = 'none';
     }, timeout);
 }
 export const setMasonry = () => {
