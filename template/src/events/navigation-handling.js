@@ -4,6 +4,7 @@ import {
 import { getFavoriteGifsById, getFavorites } from "../data/favorite.js";
 import { loadTrendingData, sendGifForUpload } from "../requests/request-services.js";
 import { toFavoriteView } from "../views/favorite-view.js";
+import { toggleLoading } from "../views/loading-view.js";
 import { toTrendingView } from "../views/trending-view.js";
 import { noFileUploadedError, setUploadView, wrongFileError } from "../views/upload-view.js";
 import { q, setActiveNav } from "./helpers.js";
@@ -12,15 +13,15 @@ import { renderHomePage } from "./random-gifs-events.js";
 export const loadPage = (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
-        q('#loading-screen').style.display = 'flex';
+        toggleLoading();
         renderHomePage();
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
-        q('#loading-screen').style.display = 'flex';
+        toggleLoading();
         renderTrendingData();
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
-        q('#loading-screen').style.display = 'flex';
+        toggleLoading();
         renderFavorites();
     } else if (page === UPLOAD) {
         q('#grid').style.height = "50px";
