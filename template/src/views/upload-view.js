@@ -15,6 +15,7 @@ export const setUploadView = () => {
                 <button type = 'button' class = 'btn btn-dark' id = "upload-button"> Upload </button> 
             </div>
         </div>
+        <h3 id = 'response'>  </h3>
         <img id="frame" src="" class="img-fluid" />
     </div> 
     

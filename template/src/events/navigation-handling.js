@@ -38,10 +38,15 @@ export const renderUpload = () => {
     q('#reset-button').addEventListener('click', () => {
         clearPreview();
     });
-    q('#upload-button').addEventListener('click', () => {
+    q('#upload-button').addEventListener('click', async () => {
         if (q('#formFile').files[0]) {
-            sendGifForUpload(q('#formFile').files[0]);
-            clearPreview();
+            try {
+                const uploadResult = await sendGifForUpload(q('#formFile').files[0]);
+                q('#response').innerHTML = uploadResult;
+                clearPreview();
+            } catch(err) {
+                q('#response').innerHTML = uploadResult;
+            }
         };
     });
 };

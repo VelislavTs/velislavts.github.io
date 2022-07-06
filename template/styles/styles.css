@@ -11,6 +11,12 @@ body {
     /* background: linear-gradient(180deg, rgba(255, 255, 255, 1) 4%, rgba(61, 242, 245, 1) 30%, rgba(23, 73, 155, 1) 100%) !important; */
 }
 
+#response {
+    align-items: center;
+    text-align: center;
+    margin-top: 1em;
+}
+
 #grid {
     margin: 0 auto;
     margin-top: 30px;

@@ -9,23 +9,29 @@ let uploadedGifs = JSON.parse(localStorage.getItem('uploaded')) || [];
 
 export const uploadGif = async (file) => {
 
-    const formData = new FormData();
-    formData.append("file", file);
-    
-    const fetchURL = UPLOAD_REQUEST_URL + API_KEY + USERNAME
-    var requestOptions = {
-        method: 'POST',
-        body: formData,
-        redirect: 'follow'
-    };
 
-    const response = await fetch(fetchURL, requestOptions)
-    const result = await response.json();
-    const resultURL = await getImageSource(result);
+    try {
+        const formData = new FormData();
+        formData.append("file", file);
 
-    uploadedGifs.push(resultURL);
+        const fetchURL = UPLOAD_REQUEST_URL + API_KEY + USERNAME
+        var requestOptions = {
+            method: 'POST',
+            body: formData,
+            redirect: 'follow'
+        };
 
-    localStorage.setItem('uploaded', JSON.stringify(uploadedGifs));
+        const response = await fetch(fetchURL, requestOptions)
+        const result = await response.json();
+        const resultURL = await getImageSource(result);
+        uploadedGifs.push(resultURL);
+        localStorage.setItem('uploaded', JSON.stringify(uploadedGifs));
+        
+        return `Gif successfully uploaded`
+    } catch (err) {
+        return `Failed to upload the gif`;
+    }
+
 }
 
 const getImageSource = async (response) => {
@@ -37,7 +43,7 @@ const getImageSource = async (response) => {
         const url = response.data.images.downsized_medium.url;
         return url;
     } catch (err) {
-        alert(err);
+        return err;
     }
 }
 
