@@ -1,10 +1,28 @@
+import { getFavorites } from "../data/favorite.js";
+import { getSingleGif } from "../data/random.js";
+
 import { qs } from "../events/helpers.js";
 import { addImageToGrid, removeGrid, setMasonryView } from "./main-view.js"
+
 export const toFavoriteView = async (favorite) => {
+
+    const favoriteLength = getFavorites();
+
     removeGrid();
-    const results = await favorite;
-    results.data.forEach(gifData => {
-        addImageToGrid(gifData);
-    });
-    setMasonryView(1500);
-};
+    // if (favoriteLength.length === 0) {
+    //     const randomSingleGif = await getSingleGif();
+    //     // randomSingleGif.data.forEach(gifData => {
+    //         console.log(randomSingleGif);
+    //         addImageToGrid(randomSingleGif);
+    //     // });
+    //     setMasonryView(1500);
+
+    // } else {
+
+        const results = await favorite;
+        results.data.forEach(gifData => {
+            addImageToGrid(gifData);
+        });
+        setMasonryView(1500);
+    }
+// };

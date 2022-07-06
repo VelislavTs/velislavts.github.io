@@ -27,6 +27,7 @@ body {
     background-color: black !important;
     background-repeat: no-repeat;
 }
+
 #giphinator {
     margin-top: 2em;
     border-radius: 1em;
@@ -38,6 +39,7 @@ body {
 #search-text {
     margin-top: 0.7em;
 }
+
 #toTopBtn {
     position: fixed;
     bottom: 26px;
@@ -72,11 +74,53 @@ body {
     margin-bottom: 0.5em !important;
 }
 
+/* this is the GIF */
 .grid-item img {
     width: 100% !important;
     border: 0.3em solid white;
     border-radius: 1em;
 }
+
+/* this is the GIF on hover */
+.grid-item img:hover {
+    /* opacity: 0.2;
+    backdrop-filter: blur(10px); */
+}
+
+/* this hold heart and title */
+.inner-div-details {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition-duration: .5s; */
+}
+
+/* this hold heart and title */
+.inner-div-details:hover {
+    /* opacity: 1; */
+}
+
+/* this hold the span for heart  */
+.heart-holder {
+    /* position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    cursor: pointer; */
+}
+
+/* this is the Title */
+.title-holder {
+    /* display: inline-block; */
+}
+
+/* this is the heart  */
+.heart-holder span {}
+
+
 
 .js .cd-top--is-visible {
     visibility: visible;
