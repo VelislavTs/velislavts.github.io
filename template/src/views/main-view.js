@@ -5,6 +5,7 @@ import {
     q,
     qs
 } from "../events/helpers.js";
+import { toggleLoading } from "./loading-view.js";
 
 const grid = q('#grid');
 export const addImageToGrid = (gifData) => {
@@ -60,7 +61,7 @@ export const setMasonryView = (timeout = 3000) => {
         })
         q('#grid').style.display = 'flex'
         q('#grid').style.visibility = 'visible';
-        q('#loading-screen').style.display = 'none';
+        toggleLoading();
     }, timeout);
 }
 export const setMasonry = () => {
@@ -78,7 +79,7 @@ export const addTextToGrid = (searchQuery = '') => {
 
     const query = searchQuery.substring(3)
     const text = `Search results for ${query}`
-    const div = document.querySelector('#search-div')
+    const div = q('#search-div')
     h2.innerText = text;
     h2.setAttribute('id', 'search-text');
     div.appendChild(h2);

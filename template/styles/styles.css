@@ -11,6 +11,12 @@ body {
     /* background: linear-gradient(180deg, rgba(255, 255, 255, 1) 4%, rgba(61, 242, 245, 1) 30%, rgba(23, 73, 155, 1) 100%) !important; */
 }
 
+#response {
+    align-items: center;
+    text-align: center;
+    margin-top: 1em;
+}
+
 #grid {
     margin: 0 auto;
     margin-top: 30px;
@@ -148,4 +154,13 @@ body {
     background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1571057658/cd-top-arrow.svg) no-repeat center 50%;
     background-color: hsla(5, 76%, 62%, .8);
     background-color: hsla(var(--cd-color-3-h), var(--cd-color-3-s), var(--cd-color-3-l), 0.8);
+}
+
+.favorite-gif-message {
+    margin-top: 0.7em;
+    animation: fadeOut 5s;
+}
+@keyframes fadeOut {
+    0% { opacity: 1;}
+    100% {opacity: 0;}
 }
