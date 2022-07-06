@@ -7,6 +7,7 @@ import { removeText } from "./views/search-view.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     if(q('#search-text') ) removeText();
+    document.body.style.pointerEvents = 'none';
     renderHomePage();
     q('#search-button').addEventListener('click', () => {
         
