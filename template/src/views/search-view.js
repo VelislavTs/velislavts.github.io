@@ -1,5 +1,4 @@
 import { q, qs } from "../events/helpers.js";
-import { toggleLoading } from "./loading-view.js";
 import {
     addImageToGrid,
     addTextToGrid,
@@ -24,7 +23,6 @@ export const toSearchView = async (searchResults, searchQuery) => {
         return err.message;
     }
 }
-
 
 export const removeText = () => {
     const text = q('#search-text');
