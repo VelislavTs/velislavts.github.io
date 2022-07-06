@@ -16,7 +16,6 @@ export const loadPage = (page = '') => {
         renderHomePage();
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
-        debugger;
         q('#loading-screen').style.display = 'flex';
         renderTrendingData();
     } else if (page === FAVORITES) {
