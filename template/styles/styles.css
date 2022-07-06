@@ -124,6 +124,7 @@ body {
 /* this is the Title */
 .title-holder {
     position: absolute;
+    width: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -133,7 +134,17 @@ body {
 }
 
 /* this is the heart  */
-.heart-holder span {}
+.heart-holder span {
+    position: absolute;
+    transform: translate(-50%, 20%);
+    font-size: 40px;
+}
+
+.favorite {
+    position: absolute;
+    transform: translate(-50%, 20%);
+    font-size: 40px;
+}
 
 
 
