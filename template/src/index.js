@@ -6,19 +6,19 @@ import { renderSearchData } from "./events/search-events.js";
 import { removeText } from "./views/search-view.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    if(document.querySelector('#search-text') ) removeText();
+    if(q('#search-text') ) removeText();
     renderHomePage();
-    document.getElementById('search-button').addEventListener('click', () => {
+    q('#search-button').addEventListener('click', () => {
         
         qs('.nav-link').forEach(el => el.classList.remove('active'));
 
-        const searchQuery = '&q=' + document.getElementById('search-input').value
+        const searchQuery = '&q=' + q('#search-input').value
         renderSearchData(searchQuery); // waiting for event
     });
 
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('nav-link')) {
-            if(document.querySelector('#search-text') ) removeText();
+            if(q('#search-text') ) removeText();
             loadPage(event.target.getAttribute('button-value'));
 
         };
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('navbar-brand-btn').addEventListener('click', () => {
-        if(document.querySelector('#search-text') ) removeText();
+        if(q('#search-text') ) removeText();
         renderHomePage();
     })
 
