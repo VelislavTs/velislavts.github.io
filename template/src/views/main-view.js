@@ -21,7 +21,7 @@ export const addImageToGrid = (gifData) => {
     let buttonForHeart;
     let gifTitle;
 
-    if (gifData.title) {
+    if (gifData.title || gifData.title === "") {
         gifTitle = gifData.title;
     } else {
         gifTitle = gifData.value.data.title;
@@ -41,7 +41,7 @@ export const addImageToGrid = (gifData) => {
 
     heartButton.innerHTML += buttonForHeart;
     placeholderForTitle.innerHTML += gifTitle;
-   
+
     div.appendChild(img)
     div.appendChild(divInner);
     divInner.appendChild(heartButton);
