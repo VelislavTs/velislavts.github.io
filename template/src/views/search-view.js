@@ -1,4 +1,5 @@
 import { q, qs } from "../events/helpers.js";
+import { toggleLoading } from "./loading-view.js";
 import {
     addImageToGrid,
     addTextToGrid,
@@ -7,18 +8,21 @@ import {
 } from "./main-view.js"
 
 export const toSearchView = async (searchResults, searchQuery) => {
-    
-    const results = await searchResults;
-    const query = await searchQuery;
-    
-    removeGrid();
-    
-    if(q('#search-text') ) removeText();
-    addTextToGrid(query)
-    results.data.forEach(imageUrl => {
-        addImageToGrid(imageUrl);
-    });
-    setMasonryView();
+    try {
+        const results = await searchResults;
+        const query = await searchQuery;
+        
+        removeGrid();
+        
+        if(q('#search-text') ) removeText();
+        addTextToGrid(query)
+        results.data.forEach(imageUrl => {
+            addImageToGrid(imageUrl);
+        });
+        setMasonryView();
+    } catch (err) {
+        return err.message;
+    }
 }
 
 

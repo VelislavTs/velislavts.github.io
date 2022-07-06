@@ -6,18 +6,26 @@ import { q, qs } from "./helpers.js"
 
 
 export const renderHomePage = async () => {
-    
-    removeGrid();
-    q('.nav-link').classList.add('active');
-    const randomGifs = await getRandomGifs(); 
-    let mainContainer = q(MAIN_CONTAINER).innerHTML;
-    const homeView = await toHomeView(randomGifs);
-    mainContainer = homeView;
-}
+    try {
+        removeGrid();
+        q('.nav-link').classList.add('active');
+        const randomGifs = await getRandomGifs(); 
+        let mainContainer = q(MAIN_CONTAINER).innerHTML;
+        const homeView = await toHomeView(randomGifs);
+        mainContainer = homeView;
+    } catch (err) {
+        return err.message;
+    }
+ 
+    }
 
 export const appendToHomePage = async () => {
-    const randomGifs = await getRandomGifs();
-    let mainContainer = q(MAIN_CONTAINER).innerHTML;
-    const homeView = await toHomeView(randomGifs);
-    mainContainer += homeView;
+    try {
+        const randomGifs = await getRandomGifs();
+        let mainContainer = q(MAIN_CONTAINER).innerHTML;
+        const homeView = await toHomeView(randomGifs);
+        mainContainer += homeView;
+    } catch (err) {
+        return err.message;
+    }
 }
