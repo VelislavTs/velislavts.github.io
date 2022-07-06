@@ -3,20 +3,36 @@ import { generateTrendingGifs } from "../data/trending.js";
 import { uploadGif } from "../data/upload.js";
 
 export const loadSearchData = async (searchQuery = '') => {
-    const searchDataResult = await searchGifs(searchQuery); 
-    return searchDataResult;
+    try {
+        const searchDataResult = await searchGifs(searchQuery); 
+        return searchDataResult;
+    } catch (err) {
+        return err.message;
+    }
 };
 
 export const sendGifForUpload = async (file) => {
-    const gifId = await uploadGif(file);
-    return gifId;
-}
+    try {
+        const gifId = await uploadGif(file);
+        return gifId;
+    } catch (err) {
+        return err.message
+    }
+    }
 
 export const loadRandomGifs = async() => {
-    const randomGifsResponse = await getRandomGifs();
-    return randomGifsResponse;
+    try {
+        const randomGifsResponse = await getRandomGifs();
+        return randomGifsResponse;
+    } catch (err) {
+        return err.message;
+    }
 }
 export const loadTrendingData = async () => {
-    const trendingDataResult = await generateTrendingGifs(); 
-    return trendingDataResult;
+    try {
+        const trendingDataResult = await generateTrendingGifs(); 
+        return trendingDataResult;
+    } catch (err) {
+        return err.message;
+    }
 };
