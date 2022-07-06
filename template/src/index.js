@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } = document.documentElement;
 
         if (scrollTop + clientHeight >= scrollHeight) {
+            console.log(scrollHeight);
             if(q('.nav-link').classList.value === 'nav-link active') {
                 appendToHomePage();
             }
