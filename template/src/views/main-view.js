@@ -12,6 +12,7 @@ export const addImageToGrid = (gifData) => {
     div.classList.add('grid-item');
     const img = document.createElement('img');
     img.style.visibility = "hidden";
+    
     const btn = renderFavoriteStatus(gifData.id);
     const heart = document.createElement('button')
     heart.innerHTML += btn;

@@ -35,6 +35,5 @@ const setUploadedGifs = () => {
     uploadedGifsByUser.forEach(gif => {
         result += `\n <img src = '${gif}' class = 'grid-item'>`
     });
-    setMasonryView();
     return result;
 };
