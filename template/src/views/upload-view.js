@@ -38,3 +38,10 @@ const setUploadedGifs = () => {
     });
     return result;
 };
+
+export const wrongFileError = () => {
+    q('#response').innerHTML = 'Sorry, we accept only gifs'
+    const emoji = document.createElement('img');
+    emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/face-massage_emoji-modifier-fitzpatrick-type-3_1f486-1f3fc_1f3fc.png'
+    q('#response').appendChild(emoji);
+}

@@ -5,7 +5,7 @@ import { getFavoriteGifsById, getFavorites } from "../data/favorite.js";
 import { loadTrendingData, sendGifForUpload } from "../requests/request-services.js";
 import { toFavoriteView } from "../views/favorite-view.js";
 import { toTrendingView } from "../views/trending-view.js";
-import { setUploadView } from "../views/upload-view.js";
+import { setUploadView, wrongFileError } from "../views/upload-view.js";
 import { q, setActiveNav } from "./helpers.js";
 import { renderHomePage } from "./random-gifs-events.js";
 
@@ -32,6 +32,10 @@ export const loadPage = (page = '') => {
 export const renderUpload = () => {
     q(MAIN_CONTAINER).innerHTML = setUploadView();
     q('#formFile').addEventListener('change', (event) => {
+        if (event.target.files[0].type !== 'image/gif') {
+            wrongFileError();
+            clearPreview();
+        }
         q('#frame').src = URL.createObjectURL(event.target.files[0]);
     });
 
