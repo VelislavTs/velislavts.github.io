@@ -10,19 +10,19 @@ import { noFileUploadedError, setUploadView, wrongFileError } from "../views/upl
 import { q, setActiveNav } from "./helpers.js";
 import { renderHomePage } from "./random-gifs-events.js";
 
-export const loadPage = (page = '') => {
+export const loadPage = async (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
         toggleLoading();
-        renderHomePage();
+        await renderHomePage();
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
         toggleLoading();
-        renderTrendingData();
+        await renderTrendingData();
     } else if (page === FAVORITES) {
         setActiveNav(FAVORITES);
         toggleLoading();
-        renderFavorites();
+        await renderFavorites();
     } else if (page === UPLOAD) {
         q('#grid').style.height = "50px";
         setActiveNav(UPLOAD);
@@ -49,7 +49,7 @@ export const renderUpload = () => {
                 const uploadResult = await sendGifForUpload(q('#formFile').files[0]);
                 q('#response').innerHTML = uploadResult;
                 clearPreview();
-            } catch(err) {
+            } catch (err) {
                 q('#response').innerHTML = uploadResult;
             }
         } else {
@@ -60,9 +60,9 @@ export const renderUpload = () => {
 
 export const renderTrendingData = async () => {
     const trendingResults = await loadTrendingData();
-    let mainContainer = q(MAIN_CONTAINER).innerHTML
-    const trendingView = await toTrendingView(trendingResults);
-    mainContainer = trendingView;
+    let mainContainer = q(MAIN_CONTAINER).innerHTML;
+    mainContainer = await toTrendingView(trendingResults);
+    return mainContainer;
 };
 
 const clearPreview = () => {
@@ -74,7 +74,6 @@ export const renderFavorites = async () => {
     const favoriteGifsIds = getFavorites().join(',');
     const result = await getFavoriteGifsById(favoriteGifsIds);
     let mainContainer = q(MAIN_CONTAINER).innerHTML;
-    const favorites = await toFavoriteView(result);
-    mainContainer = favorites;
-    // view all liked gif-s / or one random 
+    mainContainer = await toFavoriteView(result);
+    return mainContainer;
 };
