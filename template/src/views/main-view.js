@@ -76,7 +76,7 @@ export const addTextToGrid = (searchQuery = '') => {
 
     const query = searchQuery.substring(3)
     const text = `Search results for ${query}`
-    const div = document.querySelector('#search-div')
+    const div = q('#search-div')
     h2.innerText = text;
     h2.setAttribute('id', 'search-text');
     div.appendChild(h2);
