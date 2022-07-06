@@ -61,7 +61,7 @@ export const setMasonryView = (timeout = 3000) => {
         })
         q('#grid').style.display = 'flex'
         q('#grid').style.visibility = 'visible';
-        toggleLoading();
+        toggleLoading(); 
     }, timeout);
 }
 export const setMasonry = () => {

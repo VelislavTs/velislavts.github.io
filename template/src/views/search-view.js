@@ -1,4 +1,5 @@
 import { q, qs } from "../events/helpers.js";
+import { toggleLoading } from "./loading-view.js";
 import {
     addImageToGrid,
     addTextToGrid,
@@ -18,6 +19,7 @@ export const toSearchView = async (searchResults, searchQuery) => {
         results.data.forEach(imageUrl => {
             addImageToGrid(imageUrl);
         });
+        toggleLoading();
         setMasonryView();
     } catch (err) {
         return err.message;
