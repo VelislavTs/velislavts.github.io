@@ -8,19 +8,21 @@ import {
 } from "./main-view.js"
 
 export const toSearchView = async (searchResults, searchQuery) => {
-    
-    const results = await searchResults;
-    const query = await searchQuery;
-    
-    removeGrid();
-    toggleLoading();
-    
-    if(q('#search-text') ) removeText();
-    addTextToGrid(query)
-    results.data.forEach(imageUrl => {
-        addImageToGrid(imageUrl);
-    });
-    setMasonryView();
+    try {
+        const results = await searchResults;
+        const query = await searchQuery;
+        
+        removeGrid();
+        
+        if(q('#search-text') ) removeText();
+        addTextToGrid(query)
+        results.data.forEach(imageUrl => {
+            addImageToGrid(imageUrl);
+        });
+        setMasonryView();
+    } catch (err) {
+        return err.message;
+    }
 }
 
 
