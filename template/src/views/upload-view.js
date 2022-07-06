@@ -45,3 +45,12 @@ export const wrongFileError = () => {
     emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/face-massage_emoji-modifier-fitzpatrick-type-3_1f486-1f3fc_1f3fc.png'
     q('#response').appendChild(emoji);
 }
+
+export const noFileUploadedError = () => {
+    setTimeout(() => {
+        q('#response').innerHTML = 'You forgot to upload a gif'
+        const emoji = document.createElement('img');
+        emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/crying-cat-face_1f63f.png'
+        q('#response').appendChild(emoji);
+    }, 200)
+}

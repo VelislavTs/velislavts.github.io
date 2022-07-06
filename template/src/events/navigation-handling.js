@@ -5,7 +5,7 @@ import { getFavoriteGifsById, getFavorites } from "../data/favorite.js";
 import { loadTrendingData, sendGifForUpload } from "../requests/request-services.js";
 import { toFavoriteView } from "../views/favorite-view.js";
 import { toTrendingView } from "../views/trending-view.js";
-import { setUploadView, wrongFileError } from "../views/upload-view.js";
+import { noFileUploadedError, setUploadView, wrongFileError } from "../views/upload-view.js";
 import { q, setActiveNav } from "./helpers.js";
 import { renderHomePage } from "./random-gifs-events.js";
 
@@ -51,6 +51,8 @@ export const renderUpload = () => {
             } catch(err) {
                 q('#response').innerHTML = uploadResult;
             }
+        } else {
+            noFileUploadedError()
         };
     });
 };
