@@ -6,5 +6,5 @@ export const toFavoriteView = async (favorite) => {
     results.data.forEach(gifData => {
         addImageToGrid(gifData);
     });
-    setMasonryView(500);
+    setMasonryView(1500);
 };

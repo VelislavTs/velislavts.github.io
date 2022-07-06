@@ -44,6 +44,7 @@ export const addImageToGrid = (gifData) => {
     divInner.appendChild(heartButton);
     divInner.appendChild(placeholderForTitle);
     grid.appendChild(div);
+    grid.style.visibility = 'hidden';
 }
 
 export const setMasonryView = (timeout = 3000) => {

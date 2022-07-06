@@ -8,5 +8,5 @@ export const toTrendingView = async (trendingResults) => {
         addImageToGrid(gifData);
     });
     
-    setMasonryView(1000);
+    setMasonryView(4000);
 };
