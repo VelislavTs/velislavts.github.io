@@ -19,7 +19,11 @@ export const removeFavorite = (gifId) => {
 export const getFavorites = () => [...favorites];
 
 export const getFavoriteGifsById = async (ids) => {
-  const request = await fetch(GET_GIF_BY_IDS + API_KEY + '&ids=' + ids);
-  const response = await request.json();
-  return response;
+  if (ids === "") {
+    return;
+  } else {
+    const request = await fetch(GET_GIF_BY_IDS + API_KEY + '&ids=' + ids);
+    const response = await request.json();
+    return response;
+  }
 };

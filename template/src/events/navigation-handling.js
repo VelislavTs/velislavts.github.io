@@ -14,7 +14,8 @@ export const loadPage = async (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
         toggleLoading();
-        await renderHomePage();
+        // console.log('calling from Home');
+        await renderHomePage(); 
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);
         toggleLoading();
@@ -23,6 +24,7 @@ export const loadPage = async (page = '') => {
         setActiveNav(FAVORITES);
         toggleLoading();
         await renderFavorites();
+
     } else if (page === UPLOAD) {
         q('#grid').style.height = "50px";
         setActiveNav(UPLOAD);

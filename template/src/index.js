@@ -1,3 +1,4 @@
+import { HOME } from "./common/constants.js";
 import { toggleFavoriteStatus } from "./events/favorite-events.js";
 import { q, qs } from "./events/helpers.js";
 import { loadPage } from "./events/navigation-handling.js";
@@ -6,17 +7,15 @@ import { renderSearchData } from "./events/search-events.js";
 import { removeText } from "./views/search-view.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (q('#search-text')) removeText();
-    document.body.style.pointerEvents = 'none';
-    renderHomePage();
+
+    loadPage(HOME);
     q('#search-button').addEventListener('click', () => {
-
         qs('.nav-link').forEach(el => el.classList.remove('active'));
-
         const searchQuery = '&q=' + q('#search-input').value
-        renderSearchData(searchQuery); // waiting for event
+        renderSearchData(searchQuery); 
     });
 
+    if (q('#search-text')) removeText();
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('nav-link')) {
             if (q('#search-text')) removeText();
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } = document.documentElement;
 
         if (scrollTop + clientHeight >= scrollHeight) {
-            console.log(scrollHeight);
             if (q('.nav-link').classList.value === 'nav-link active') {
                 await appendToHomePage();
             }
