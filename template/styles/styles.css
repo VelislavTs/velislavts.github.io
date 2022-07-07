@@ -134,11 +134,15 @@ body {
     font-size: 40px;
 }
 
+.heart-holder span:hover {
+    font-size: 60px;
+    margin-top: -20px;
+}
+
 /* this is the empty heart  */
 .favorite {
-    position: absolute;
     color: #f00;
-    /* transition: all 0.3s ease-in-out; */
+    transition: all 0.2s ease-in-out;
     font-size: 20px;
 }
 
