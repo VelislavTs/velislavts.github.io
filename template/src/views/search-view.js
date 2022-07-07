@@ -20,7 +20,7 @@ export const toSearchView = async (searchResults, searchQuery) => {
             addImageToGrid(imageUrl);
         });
         toggleLoading();
-        setMasonryView();
+        setMasonryView(3500);
     } catch (err) {
         return err.message;
     }

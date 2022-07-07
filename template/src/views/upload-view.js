@@ -44,6 +44,7 @@ export const wrongFileError = () => {
     const emoji = document.createElement('img');
     emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/face-massage_emoji-modifier-fitzpatrick-type-3_1f486-1f3fc_1f3fc.png';
     q('#response').appendChild(emoji);
+    q('#response').style.border = '5px solid rgba(52, 145, 147, 0.687)';
 };
 
 export const noFileUploadedError = () => {
@@ -52,5 +53,6 @@ export const noFileUploadedError = () => {
         const emoji = document.createElement('img');
         emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/crying-cat-face_1f63f.png';
         q('#response').appendChild(emoji);
+        q('#response').style.border = '5px solid rgba(52, 145, 147, 0.687)';
     }, 200);
 };

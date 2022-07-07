@@ -62,6 +62,13 @@ body {
     margin-top: -3em;
 }
 
+#response {
+    border: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20%;
+}
+
 .nav-link.active {
     font-weight: bold;
     color: rgba(52, 145, 147, 0.687) !important
@@ -285,10 +292,10 @@ body {
 
 @keyframes ball {
     0% {
-        box-shadow: 34px 0 0 0 rgb(200, 172, 16), 57px 0 0 0 rgb(200, 172, 16), 80px 0 0 0 rgb(200, 172, 16);
+        box-shadow: 34px 0 0 0 rgb(52, 145, 147), 57px 0 0 0 rgb(52, 145, 147), 80px 0 0 0 rgb(52, 145, 147);
     }
 
     100% {
-        box-shadow: 10px 0 0 0 rgb(200, 172, 16), 34px 0 0 0 rgb(200, 172, 16), 57px 0 0 0 rgb(200, 172, 16);
+        box-shadow: 10px 0 0 0 rgb(52, 145, 147), 34px 0 0 0 rgb(52, 145, 147), 57px 0 0 0 rgb(52, 145, 147);
     }
 }

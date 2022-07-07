@@ -1,5 +1,6 @@
 import { getFavorites } from '../data/favorite.js';
 import { getSingleGif } from '../data/random.js';
+import { q } from '../events/helpers.js';
 
 import { addImageToGrid, removeGrid, setMasonryView } from './main-view.js';
 
