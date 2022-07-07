@@ -1,4 +1,4 @@
-import { API_KEY, LIMIT, RATING, SEARCH_REQUEST_URL } from "../common/requests-params.js"
+import { API_KEY, LIMIT, RATING, SEARCH_REQUEST_URL } from '../common/requests-params.js';
 /**
  * description: searchGifs function will make a request to the Giphy API using query as a search criteria.
  * @param {String} query 
@@ -12,4 +12,5 @@ export const searchGifs = async (query = '') => {
     } catch (err) {
         return err.message; 
     }
-}
+};
+

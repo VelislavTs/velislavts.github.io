@@ -21,6 +21,7 @@ body {
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 1em;
+    height: 400px;
     display: table !important;
     margin-bottom: 1em !important;
 }
@@ -60,6 +61,13 @@ body {
 
 #reset-button {
     margin-top: -3em;
+}
+
+#response {
+    border: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20%;
 }
 
 .nav-link.active {
@@ -135,15 +143,14 @@ body {
 }
 
 .heart-holder span:hover {
-    /* transform: scale(1.1);
-    padding-right:50px; */
+    font-size: 60px;
+    margin-top: -20px;
 }
 
 /* this is the empty heart  */
 .favorite {
-    position: absolute;
     color: #f00;
-    /* transition: all 0.3s ease-in-out; */
+    transition: all 0.2s ease-in-out;
     font-size: 20px;
 }
 
@@ -286,10 +293,10 @@ body {
 
 @keyframes ball {
     0% {
-        box-shadow: 34px 0 0 0 rgb(200, 172, 16), 57px 0 0 0 rgb(200, 172, 16), 80px 0 0 0 rgb(200, 172, 16);
+        box-shadow: 34px 0 0 0 rgb(52, 145, 147), 57px 0 0 0 rgb(52, 145, 147), 80px 0 0 0 rgb(52, 145, 147);
     }
 
     100% {
-        box-shadow: 10px 0 0 0 rgb(200, 172, 16), 34px 0 0 0 rgb(200, 172, 16), 57px 0 0 0 rgb(200, 172, 16);
+        box-shadow: 10px 0 0 0 rgb(52, 145, 147), 34px 0 0 0 rgb(52, 145, 147), 57px 0 0 0 rgb(52, 145, 147);
     }
 }

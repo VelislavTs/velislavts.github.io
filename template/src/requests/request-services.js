@@ -1,6 +1,7 @@
-import { searchGifs } from "../data/search.js";
-import { generateTrendingGifs } from "../data/trending.js";
-import { uploadGif } from "../data/upload.js";
+import { getRandomGifs } from '../data/random.js';
+import { searchGifs } from '../data/search.js';
+import { generateTrendingGifs } from '../data/trending.js';
+import { uploadGif } from '../data/upload.js';
 /**
  * @description: loadSearchData function will load all Gifs corresponding to the search criteria.
  * @param {String} searchQuery 
@@ -24,9 +25,9 @@ export const sendGifForUpload = async (file) => {
         const gifId = await uploadGif(file);
         return gifId;
     } catch (err) {
-        return err.message
+        return err.message;
     }
-    }
+};
 /**
  * @description: loadRandomGifs function will load the response for multiple random Gifs. 
  * @returns: It returns an array with all random Gifs. 
@@ -38,7 +39,7 @@ export const loadRandomGifs = async() => {
     } catch (err) {
         return err.message;
     }
-}
+};
 /**
  * @description: loadTrendingData function will load the response for trending Gifs. 
  * @returns: It returns an object will all trending Gifs

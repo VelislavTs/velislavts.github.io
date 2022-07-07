@@ -1,9 +1,8 @@
-import { q, qs } from "../events/helpers.js";
-import { toggleLoading } from "./loading-view.js";
+import { q } from '../events/helpers.js';
 import {
     addImageToGrid,
     setMasonryView
-} from "./main-view.js"
+} from './main-view.js';
 /**
  * @description: toHomeView function will render the view for the home page. 
  * @param {Array} randomGifs
@@ -19,4 +18,4 @@ export const toHomeView = async (randomGifs) => {
     } catch (err) {
         return err.message;
     }
-}
+};

@@ -1,4 +1,4 @@
-import { addImageToGrid, removeGrid, setMasonryView } from "./main-view.js"
+import { addImageToGrid, removeGrid, setMasonryView } from './main-view.js';
 /**
  * @description: toTrendingView function is responsible for the trending view page. 
  * @param {Object} trendingResults 

@@ -1,4 +1,4 @@
-import { API_KEY, RATING , RANDOM_REQUEST_URL } from "../common/requests-params.js"
+import { API_KEY, RATING , RANDOM_REQUEST_URL } from '../common/requests-params.js';
 /**
  * @description: getSingleGif function will make a fetch request for random single Gif.
  * @returns: It returns the response from the Giphy API. 
@@ -11,7 +11,7 @@ export const getSingleGif = async() => {
     }catch (err) {
         return err.message;
     }
-}
+};
 /**
  * @description: getRandomGifs function will make a fetch request for multiple random Gif.
  * @returns:It returns the response from the Giphy API as an array.  
@@ -30,11 +30,10 @@ export const getRandomGifs = async() => {
         const data = await Promise.allSettled(promises);       
         data.forEach((el) => {
             result.push(el);
-        })
+        });
         return data;
     } catch (err) {
         return err.message;
     }
-    
-}
+};
 

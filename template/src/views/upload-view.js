@@ -1,6 +1,6 @@
-import { getUploadedGifs } from "../data/upload.js"
-import { q, qs } from "../events/helpers.js";
-import { removeGrid, setMasonry, setMasonryView } from "./main-view.js";
+import { getUploadedGifs } from '../data/upload.js';
+import { q } from '../events/helpers.js';
+import { removeGrid } from './main-view.js';
 /**
  * @description: setUploadView function is responsible for the upload page view. 
  * @returns: It returns a template with the view of the upload page. 
@@ -28,8 +28,8 @@ export const setUploadView = () => {
             ${setUploadedGifs()}
         </div>
     </div> 
-    `
-}
+    `;
+};
 /**
  * @description: setUploadedGifs function will show all uploaded Gifs on the upload page. 
  */
@@ -38,7 +38,7 @@ const setUploadedGifs = () => {
     const uploadedGifsByUser = getUploadedGifs();
     let result = '';
     uploadedGifsByUser.forEach(gif => {
-        result += `\n <img src = '${gif}' class = 'grid-item'>`
+        result += `\n <img src = '${gif}' class = 'grid-item'>`;
     });
     return result;
 };
@@ -46,19 +46,21 @@ const setUploadedGifs = () => {
  * @description: wrongFileError function will show an error message when one tries to upload unsupported file type. 
  */
 export const wrongFileError = () => {
-    q('#response').innerHTML = 'Sorry, we accept only gifs'
+    q('#response').innerHTML = 'Sorry, we accept only gifs';
     const emoji = document.createElement('img');
-    emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/face-massage_emoji-modifier-fitzpatrick-type-3_1f486-1f3fc_1f3fc.png'
+    emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/face-massage_emoji-modifier-fitzpatrick-type-3_1f486-1f3fc_1f3fc.png';
     q('#response').appendChild(emoji);
-}
+    q('#response').style.border = '5px solid rgba(52, 145, 147, 0.687)';
+};
 /**
  * @description: noFileUploadedError function will show a message, when one forgets to attach a file and presses the 'upload' button.
  */
 export const noFileUploadedError = () => {
     setTimeout(() => {
-        q('#response').innerHTML = 'You forgot to upload a gif'
+        q('#response').innerHTML = 'You forgot to upload a gif';
         const emoji = document.createElement('img');
-        emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/crying-cat-face_1f63f.png'
+        emoji.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/facebook/65/crying-cat-face_1f63f.png';
         q('#response').appendChild(emoji);
-    }, 200)
-}
+        q('#response').style.border = '5px solid rgba(52, 145, 147, 0.687)';
+    }, 200);
+};

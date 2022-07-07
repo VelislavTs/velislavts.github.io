@@ -1,4 +1,4 @@
-import { q } from "../events/helpers.js";
+import { q } from '../events/helpers.js';
 /**
  * @description: toggleLoading function will toggle the loading view.
  */
@@ -8,7 +8,7 @@ export const toggleLoading = () => {
         loadingScreen.style.display = 'flex';
         document.body.style.pointerEvents = 'none';
     } else {
-        loadingScreen.style.display = 'none'
+        loadingScreen.style.display = 'none';
         document.body.style.pointerEvents = 'auto';
     }
-}
+};

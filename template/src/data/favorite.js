@@ -1,4 +1,4 @@
-import { API_KEY, GET_GIF_BY_IDS } from "../common/requests-params.js";
+import { API_KEY, GET_GIF_BY_IDS } from '../common/requests-params.js';
 /** The favorites variable keeps all gif items stored in the local storage*/
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 /**
@@ -33,7 +33,7 @@ export const getFavorites = () => [...favorites];
  * @returns: It returns the response from the Giphy API. 
  */
 export const getFavoriteGifsById = async (ids) => {
-  if (ids === "") {
+  if (ids === '') {
     return;
   } else {
     const request = await fetch(GET_GIF_BY_IDS + API_KEY + '&ids=' + ids);

@@ -1,11 +1,11 @@
 import {
     renderFavoriteStatus
-} from "../events/favorite-events.js";
+} from '../events/favorite-events.js';
 import {
     q,
     qs
-} from "../events/helpers.js";
-import { toggleLoading } from "./loading-view.js";
+} from '../events/helpers.js';
+import { toggleLoading } from './loading-view.js';
 /** The grid variable is selecting the grid container. */
 const grid = q('#grid');
 /**
@@ -24,7 +24,7 @@ export const addImageToGrid = (gifData) => {
     placeholderForTitle.classList.add('title-holder');
     let buttonForHeart;
     let gifTitle;
-    if (gifData.title || gifData.title === "") {
+    if (gifData.title || gifData.title === '') {
         gifTitle = gifData.title;
     } else {
         gifTitle = gifData.value.data.title;
@@ -35,37 +35,37 @@ export const addImageToGrid = (gifData) => {
         buttonForHeart = renderFavoriteStatus(gifData.value.data.id);
     }
     try {
-        img.src = `${gifData.images.downsized.url}`
+        img.src = `${gifData.images.downsized.url}`;
     } catch (e) {
-        img.src = `${gifData.value.data.images.downsized.url}`
+        img.src = `${gifData.value.data.images.downsized.url}`;
     }
     heartButton.innerHTML += buttonForHeart;
     placeholderForTitle.innerHTML += gifTitle;
-    div.appendChild(img)
+    div.appendChild(img);
     div.appendChild(divInner);
     divInner.appendChild(heartButton);
     divInner.appendChild(placeholderForTitle);
     grid.appendChild(div);
     grid.style.visibility = 'hidden';
-}
+};
 /**
  * @description: setMasonryView function will set the rendered data in Masonry view with given delay. 
  * @param {Number} timeout 
  */
 export const setMasonryView = (timeout = 3000) => {
     setTimeout(() => {
-        setMasonry()
-        const gridItems = qs('.grid-item')
+        setMasonry();
+        const gridItems = qs('.grid-item');
         gridItems.forEach(el => {
             el.childNodes.forEach(child => {
-                child.style.visibility = "visible";
-            })
-        })
-        q('#grid').style.display = 'flex'
+                child.style.visibility = 'visible';
+            });
+        });
+        q('#grid').style.display = 'flex';
         q('#grid').style.visibility = 'visible';
         toggleLoading(); 
     }, timeout);
-}
+};
 /**
  * @description: setMasonry function is setting the Masonry Object. 
  */
@@ -77,22 +77,21 @@ export const setMasonry = () => {
         originRight: false,
         fitWidth: true,
     });
-}
+};
 /**
  * @description: addTextToGrid function will add information text for the searching view. 
  * @param {String} searchQuery 
  */
 export const addTextToGrid = (searchQuery = '') => {
     const h2 = document.createElement('h2');
-
-    const query = searchQuery.substring(3)
-    const text = `Search results for ${query}`
-    const div = q('#search-div')
+    const query = searchQuery.substring(3);
+    const text = `Search results for ${query}`;
+    const div = q('#search-div');
     h2.innerText = text;
     h2.setAttribute('id', 'search-text');
     div.appendChild(h2);
     q('#search-input').value = '';
-}
+};
 /**
  * @description: removeGrid function will remove the grid from the view. 
  */
@@ -101,4 +100,4 @@ export const removeGrid = () => {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
-}
+};

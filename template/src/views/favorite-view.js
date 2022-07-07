@@ -1,8 +1,6 @@
-import { getFavorites } from "../data/favorite.js";
-import { getSingleGif } from "../data/random.js";
-
-import { qs } from "../events/helpers.js";
-import { addImageToGrid, removeGrid, setMasonryView } from "./main-view.js"
+import { getFavorites } from '../data/favorite.js';
+import { getSingleGif } from '../data/random.js';
+import { addImageToGrid, removeGrid, setMasonryView } from './main-view.js';
 /**
  * @description: toFavoriteView function will render the Favorites Page. 
  * @param {Object} favorite 
