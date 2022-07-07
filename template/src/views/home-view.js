@@ -4,7 +4,10 @@ import {
     addImageToGrid,
     setMasonryView
 } from "./main-view.js"
-
+/**
+ * @description: toHomeView function will render the view for the home page. 
+ * @param {Array} randomGifs
+ */
 export const toHomeView = async (randomGifs) => {
     try {
         const results = await randomGifs;
@@ -16,6 +19,4 @@ export const toHomeView = async (randomGifs) => {
     } catch (err) {
         return err.message;
     }
-    // on // off // on
-    // on // off  
 }

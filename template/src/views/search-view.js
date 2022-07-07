@@ -6,14 +6,16 @@ import {
     setMasonryView,
     removeGrid
 } from "./main-view.js"
-
+/**
+ * @description: toSearchView function is rensponsible for the view of the search page. 
+ * @param {Object} searchResults 
+ * @param {String} searchQuery 
+ */
 export const toSearchView = async (searchResults, searchQuery) => {
     try {
         const results = await searchResults;
         const query = await searchQuery;
-        
         removeGrid();
-        
         if(q('#search-text') ) removeText();
         addTextToGrid(query)
         results.data.forEach(imageUrl => {
@@ -25,7 +27,9 @@ export const toSearchView = async (searchResults, searchQuery) => {
         return err.message;
     }
 }
-
+/**
+ * @description: removeText is a help function, which will remove the text after new search event is triggered. 
+ */
 export const removeText = () => {
     const text = q('#search-text');
     q('#search-div').removeChild(text);

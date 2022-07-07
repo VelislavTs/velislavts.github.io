@@ -4,8 +4,9 @@ import { toHomeView } from "../views/home-view.js";
 import { toggleLoading } from "../views/loading-view.js";
 import { removeGrid } from "../views/main-view.js";
 import { q, qs } from "./helpers.js"
-
-
+/**
+ * @description: renderHomePage function renders the view of the home page.
+ */
 export const renderHomePage = async () => {
     try {
         removeGrid();
@@ -16,9 +17,10 @@ export const renderHomePage = async () => {
         return err.message;
     }
 }
-
+/**
+ * @description: renderHomePage function appends more Gifs when infinity scroll is activated.
+ */
 export const appendToHomePage = async () => {
-    
     try {
         const randomGifs = await getRandomGifs();
         let mainContainer = q(MAIN_CONTAINER).innerHTML;
