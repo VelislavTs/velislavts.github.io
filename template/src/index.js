@@ -5,16 +5,17 @@ import { loadPage } from "./events/navigation-handling.js";
 import { appendToHomePage, renderHomePage } from "./events/random-gifs-events.js";
 import { renderSearchData } from "./events/search-events.js";
 import { removeText } from "./views/search-view.js";
-
+/**
+ * @description: Hanldes user clicks on the navigation bar and forwards event input to navigation handling function.
+ * @params {Event}
+ */
 document.addEventListener('DOMContentLoaded', () => {
-
     loadPage(HOME);
     q('#search-button').addEventListener('click', () => {
         qs('.nav-link').forEach(el => el.classList.remove('active'));
         const searchQuery = '&q=' + q('#search-input').value
         renderSearchData(searchQuery); 
     });
-
     if (q('#search-text')) removeText();
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('nav-link')) {
@@ -27,12 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleFavoriteStatus(event.target.getAttribute('data-gif-id'));
         };
     });
-
     document.getElementById('navbar-brand-btn').addEventListener('click', () => {
         if (q('#search-text')) removeText();
         renderHomePage();
     })
-
     window.addEventListener('scroll', async () => {
         const {
             scrollTop,
