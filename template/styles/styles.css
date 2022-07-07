@@ -177,11 +177,14 @@ body {
 }
 
 .favorite-gif-message {
-    margin-top: 2em;
+    margin-top: 1em;
+    margin-left: -10%;
     animation: fadeOut 5s;
     padding-top: 2em;
     text-align: center;
+    position: fixed;
 }
+
 
 @keyframes fadeOut {
     0% {
