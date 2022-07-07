@@ -86,20 +86,15 @@ body {
 }
 
 /* this is the GIF on hover */
-.grid-item img:hover {
-    /* opacity: 1; */
-    /* backdrop-filter: blur(5px); */
-}
+.grid-item img:hover {}
 
 /* this hold heart and title */
 .inner-div-details {
-    /* display: none; */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    /* transition-duration: .5s; */
 }
 
 /* this hold heart and title */
@@ -123,28 +118,34 @@ body {
 .title-holder {
     position: absolute;
     width: 90%;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: rgb(255, 255, 255);
-    font-size: 22px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-/* this is the heart  */
+/* this is the full heart  */
 .heart-holder span {
     position: absolute;
     transform: translate(-50%, 20%);
     font-size: 40px;
 }
 
-.favorite {
-    position: absolute;
-    transform: translate(-50%, 20%);
-    font-size: 40px;
+.heart-holder span:hover {
+    /* transform: scale(1.1);
+    padding-right:50px; */
 }
 
-
+/* this is the empty heart  */
+.favorite {
+    position: absolute;
+    color: #f00;
+    /* transition: all 0.3s ease-in-out; */
+    font-size: 20px;
+}
 
 .js .cd-top--is-visible {
     visibility: visible;
@@ -202,22 +203,22 @@ body {
     background: #f00;
     transform-origin: bottom;
     animation: eating-top 0.5s infinite;
-    width: 100px;
-    height: calc(100px/ 2);
-    background: #fed75a;
+    width: 85px;
+    height: calc(85px/ 2);
+    background: #dfbb45;
 }
 
 .pac-man,
 .pac-man::before {
-    width: 100px;
-    height: calc(100px/ 2);
-    background: #fed75a;
+    width: 85px;
+    height: calc(85px/ 2);
+    background: #dfbb45;
 }
 
 .pac-man::before {
     content: '';
     display: block;
-    margin-top: calc(100px / 2);
+    margin-top: calc(85px / 2);
     position: absolute;
     transform-origin: top;
     border-radius: 0 0 100rem 100rem;
@@ -230,10 +231,10 @@ body {
     border-radius: 100rem;
     content: '';
     display: block;
-    height: 10px;
-    width: 10px;
-    margin-top: calc((100px / 2) - 3px);
-    margin-left: calc((100px / 2) - 3px);
+    height: 12px;
+    width: 12px;
+    margin-top: calc((85px / 2) - 3px);
+    margin-left: calc((85px / 2) - 3px);
     transform-origin: center;
     animation: center 0.5s infinite, ball 0.5s -0.33s infinite linear;
 }
@@ -282,10 +283,10 @@ body {
 
 @keyframes ball {
     0% {
-        box-shadow: 34px 0 0 0 rgb(0, 0, 0), 57px 0 0 0 rgb(0, 0, 0), 80px 0 0 0 rgb(0, 0, 0);
+        box-shadow: 34px 0 0 0 rgb(200, 172, 16), 57px 0 0 0 rgb(200, 172, 16), 80px 0 0 0 rgb(200, 172, 16);
     }
 
     100% {
-        box-shadow: 10px 0 0 0 rgb(0, 0, 0), 34px 0 0 0 rgb(0, 0, 0), 57px 0 0 0 rgb(0, 0, 0);
+        box-shadow: 10px 0 0 0 rgb(200, 172, 16), 34px 0 0 0 rgb(200, 172, 16), 57px 0 0 0 rgb(200, 172, 16);
     }
 }

@@ -14,7 +14,7 @@ export const loadPage = async (page = '') => {
     if (page === HOME) {
         setActiveNav(HOME);
         toggleLoading();
-        console.log('calling from Home');
+        // console.log('calling from Home');
         await renderHomePage(); 
     } else if (page === TRENDING) {
         setActiveNav(TRENDING);

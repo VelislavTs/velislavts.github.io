@@ -6,18 +6,15 @@ import { addImageToGrid, removeGrid, setMasonryView } from "./main-view.js"
 
 export const toFavoriteView = async (favorite) => {
 
-    const favoriteLength = getFavorites();
-
     removeGrid();
-    // if (favoriteLength.length === 0) {
-    //     const randomSingleGif = await getSingleGif();
-    //     // randomSingleGif.data.forEach(gifData => {
-    //         console.log(randomSingleGif);
-    //         addImageToGrid(randomSingleGif);
-    //     // });
-    //     setMasonryView(1500);
 
-    // } else {
+    const favoriteLength = getFavorites();
+    if (favoriteLength.length === 0) {
+        const randomSingleGif = await getSingleGif();
+        addImageToGrid(randomSingleGif.data);
+        setMasonryView(1500);
+
+    } else {
 
         const results = await favorite;
         results.data.forEach(gifData => {
@@ -25,4 +22,4 @@ export const toFavoriteView = async (favorite) => {
         });
         setMasonryView(1500);
     }
-// };
+};

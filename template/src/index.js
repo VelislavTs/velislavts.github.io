@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     q('#search-button').addEventListener('click', () => {
         qs('.nav-link').forEach(el => el.classList.remove('active'));
         const searchQuery = '&q=' + q('#search-input').value
-        renderSearchData(searchQuery); // waiting for event
+        renderSearchData(searchQuery); 
     });
 
     if (q('#search-text')) removeText();
