@@ -1,9 +1,9 @@
 import { MAIN_CONTAINER } from '../common/constants.js';
-import { getRandomGifs, getSingleGif } from '../data/random.js';
+import { getRandomGifs } from '../data/random.js';
 import { toHomeView } from '../views/home-view.js';
 import { toggleLoading } from '../views/loading-view.js';
 import { removeGrid } from '../views/main-view.js';
-import { q, qs } from './helpers.js';
+import { q } from './helpers.js';
 
 
 export const renderHomePage = async () => {

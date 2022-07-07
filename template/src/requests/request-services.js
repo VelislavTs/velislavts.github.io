@@ -1,3 +1,4 @@
+import { getRandomGifs } from '../data/random.js';
 import { searchGifs } from '../data/search.js';
 import { generateTrendingGifs } from '../data/trending.js';
 import { uploadGif } from '../data/upload.js';
@@ -18,7 +19,7 @@ export const sendGifForUpload = async (file) => {
     } catch (err) {
         return err.message;
     }
-    };
+};
 
 export const loadRandomGifs = async() => {
     try {

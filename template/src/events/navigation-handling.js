@@ -1,6 +1,4 @@
-import {
-    ABOUT, FAVORITES, HOME, MAIN_CONTAINER, TRENDING, UPLOAD,
-} from '../common/constants.js';
+import { FAVORITES, HOME, MAIN_CONTAINER, TRENDING, UPLOAD } from '../common/constants.js';
 import { getFavoriteGifsById, getFavorites } from '../data/favorite.js';
 import { loadTrendingData, sendGifForUpload } from '../requests/request-services.js';
 import { toFavoriteView } from '../views/favorite-view.js';
@@ -47,8 +45,9 @@ export const renderUpload = () => {
     });
     q('#upload-button').addEventListener('click', async () => {
         if (q('#formFile').files[0]) {
+            let uploadResult;
             try {
-                const uploadResult = await sendGifForUpload(q('#formFile').files[0]);
+                uploadResult = await sendGifForUpload(q('#formFile').files[0]);
                 q('#response').innerHTML = uploadResult;
                 clearPreview();
             } catch (err) {

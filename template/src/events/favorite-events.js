@@ -1,6 +1,6 @@
 import { EMPTY_HEART, FULL_HEART } from '../common/constants.js';
 import { addFavorite, getFavorites, removeFavorite } from '../data/favorite.js';
-import { q, qs } from './helpers.js';
+import { q } from './helpers.js';
 
 export const toggleFavoriteStatus = (id) => {
   const favorites = getFavorites();
