@@ -1,8 +1,8 @@
-import { getFavorites } from "../data/favorite.js";
-import { getSingleGif } from "../data/random.js";
+import { getFavorites } from '../data/favorite.js';
+import { getSingleGif } from '../data/random.js';
 
-import { qs } from "../events/helpers.js";
-import { addImageToGrid, removeGrid, setMasonryView } from "./main-view.js"
+import { qs } from '../events/helpers.js';
+import { addImageToGrid, removeGrid, setMasonryView } from './main-view.js';
 
 export const toFavoriteView = async (favorite) => {
 

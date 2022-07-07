@@ -1,4 +1,4 @@
-import { API_KEY, LIMIT, RATING, SEARCH_REQUEST_URL } from "../common/requests-params.js"
+import { API_KEY, LIMIT, RATING, SEARCH_REQUEST_URL } from '../common/requests-params.js';
 
 export const searchGifs = async (query = '') => {
     try {
@@ -9,5 +9,5 @@ export const searchGifs = async (query = '') => {
     } catch (err) {
         return err.message; 
     }
-}
+};
 

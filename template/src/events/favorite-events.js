@@ -7,7 +7,7 @@ export const toggleFavoriteStatus = (id) => {
   const heartSpan = q(`span[data-gif-id="${id}"]`);
   if (favorites.includes(id)) {
     removeFavorite(id);
-    heartSpan.classList.remove('active')
+    heartSpan.classList.remove('active');
     heartSpan.innerHTML = EMPTY_HEART;
     renderFavoritesMessage(id);
   } else {
@@ -28,23 +28,23 @@ export const renderFavoriteStatus = (gifId) => {
 
   export const renderFavoritesMessage = (id) => { 
     const favorites = getFavorites();
-    if(favorites.includes(id)) {
+    if (favorites.includes(id)) {
       const div = q('#main-div');
       const message = document.createElement('h5');
-      message.innerText = 'Gif addded to favorites successfully!'
+      message.innerText = 'Gif addded to favorites successfully!';
       message.classList.add('favorite-gif-message');
       div.appendChild(message);
       setTimeout(function() {
         div.removeChild(message);
-      },2000)
+      },2000);
    } else {
       const div = q('#main-div');
       const message = document.createElement('h5');
-      message.innerText = 'Gif removed from favorites successfully!'
+      message.innerText = 'Gif removed from favorites successfully!';
       message.classList.add('favorite-gif-message');
       div.appendChild(message);
       setTimeout(function() {
         div.removeChild(message);
-      },2000)
+      },2000);
     }
-  }
+  };

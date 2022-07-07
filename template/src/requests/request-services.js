@@ -1,6 +1,6 @@
-import { searchGifs } from "../data/search.js";
-import { generateTrendingGifs } from "../data/trending.js";
-import { uploadGif } from "../data/upload.js";
+import { searchGifs } from '../data/search.js';
+import { generateTrendingGifs } from '../data/trending.js';
+import { uploadGif } from '../data/upload.js';
 
 export const loadSearchData = async (searchQuery = '') => {
     try {
@@ -16,9 +16,9 @@ export const sendGifForUpload = async (file) => {
         const gifId = await uploadGif(file);
         return gifId;
     } catch (err) {
-        return err.message
+        return err.message;
     }
-    }
+    };
 
 export const loadRandomGifs = async() => {
     try {
@@ -27,7 +27,7 @@ export const loadRandomGifs = async() => {
     } catch (err) {
         return err.message;
     }
-}
+};
 export const loadTrendingData = async () => {
     try {
         const trendingDataResult = await generateTrendingGifs(); 

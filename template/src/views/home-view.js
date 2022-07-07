@@ -1,9 +1,8 @@
-import { q, qs } from "../events/helpers.js";
-import { toggleLoading } from "./loading-view.js";
+import { q } from '../events/helpers.js';
 import {
     addImageToGrid,
     setMasonryView
-} from "./main-view.js"
+} from './main-view.js';
 
 export const toHomeView = async (randomGifs) => {
     try {
@@ -16,6 +15,4 @@ export const toHomeView = async (randomGifs) => {
     } catch (err) {
         return err.message;
     }
-    // on // off // on
-    // on // off  
-}
+};

@@ -1,14 +1,14 @@
 import {
     ABOUT, FAVORITES, HOME, MAIN_CONTAINER, TRENDING, UPLOAD,
-} from "../common/constants.js";
-import { getFavoriteGifsById, getFavorites } from "../data/favorite.js";
-import { loadTrendingData, sendGifForUpload } from "../requests/request-services.js";
-import { toFavoriteView } from "../views/favorite-view.js";
-import { toggleLoading } from "../views/loading-view.js";
-import { toTrendingView } from "../views/trending-view.js";
-import { noFileUploadedError, setUploadView, wrongFileError } from "../views/upload-view.js";
-import { q, setActiveNav } from "./helpers.js";
-import { renderHomePage } from "./random-gifs-events.js";
+} from '../common/constants.js';
+import { getFavoriteGifsById, getFavorites } from '../data/favorite.js';
+import { loadTrendingData, sendGifForUpload } from '../requests/request-services.js';
+import { toFavoriteView } from '../views/favorite-view.js';
+import { toggleLoading } from '../views/loading-view.js';
+import { toTrendingView } from '../views/trending-view.js';
+import { noFileUploadedError, setUploadView, wrongFileError } from '../views/upload-view.js';
+import { q, setActiveNav } from './helpers.js';
+import { renderHomePage } from './random-gifs-events.js';
 
 export const loadPage = async (page = '') => {
     if (page === HOME) {
@@ -26,7 +26,7 @@ export const loadPage = async (page = '') => {
         await renderFavorites();
 
     } else if (page === UPLOAD) {
-        q('#grid').style.height = "50px";
+        q('#grid').style.height = '50px';
         setActiveNav(UPLOAD);
         renderUpload();
     }
@@ -55,8 +55,8 @@ export const renderUpload = () => {
                 q('#response').innerHTML = uploadResult;
             }
         } else {
-            noFileUploadedError()
-        };
+            noFileUploadedError();
+        }
     });
 };
 
@@ -70,7 +70,7 @@ export const renderTrendingData = async () => {
 const clearPreview = () => {
     q('#frame').src = '';
     q('#formFile').value = null;
-}
+};
 
 export const renderFavorites = async () => {
     const favoriteGifsIds = getFavorites().join(',');

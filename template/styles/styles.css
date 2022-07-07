@@ -134,11 +134,6 @@ body {
     font-size: 40px;
 }
 
-.heart-holder span:hover {
-    /* transform: scale(1.1);
-    padding-right:50px; */
-}
-
 /* this is the empty heart  */
 .favorite {
     position: absolute;

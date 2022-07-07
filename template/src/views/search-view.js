@@ -1,11 +1,11 @@
-import { q, qs } from "../events/helpers.js";
-import { toggleLoading } from "./loading-view.js";
+import { q } from '../events/helpers.js';
+import { toggleLoading } from './loading-view.js';
 import {
     addImageToGrid,
     addTextToGrid,
     setMasonryView,
     removeGrid
-} from "./main-view.js"
+} from './main-view.js';
 
 export const toSearchView = async (searchResults, searchQuery) => {
     try {
@@ -14,8 +14,8 @@ export const toSearchView = async (searchResults, searchQuery) => {
         
         removeGrid();
         
-        if(q('#search-text') ) removeText();
-        addTextToGrid(query)
+        if(q('#search-text')) removeText();
+        addTextToGrid(query);
         results.data.forEach(imageUrl => {
             addImageToGrid(imageUrl);
         });
@@ -24,9 +24,9 @@ export const toSearchView = async (searchResults, searchQuery) => {
     } catch (err) {
         return err.message;
     }
-}
+};
 
 export const removeText = () => {
     const text = q('#search-text');
     q('#search-div').removeChild(text);
-}
+};

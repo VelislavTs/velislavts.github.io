@@ -1,10 +1,9 @@
-import { API_KEY, GET_GIF_BY_IDS } from "../common/requests-params.js";
+import { API_KEY, GET_GIF_BY_IDS } from '../common/requests-params.js';
 
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 export const addFavorite = (gifId) => {
   if (favorites.find(id => id === gifId)) {
-    // Gif has already been added to favorites
     return;
   }
   favorites.push(gifId);
@@ -19,7 +18,7 @@ export const removeFavorite = (gifId) => {
 export const getFavorites = () => [...favorites];
 
 export const getFavoriteGifsById = async (ids) => {
-  if (ids === "") {
+  if (ids === '') {
     return;
   } else {
     const request = await fetch(GET_GIF_BY_IDS + API_KEY + '&ids=' + ids);

@@ -1,4 +1,4 @@
-import { addImageToGrid, removeGrid, setMasonryView } from "./main-view.js"
+import { addImageToGrid, removeGrid, setMasonryView } from './main-view.js';
 
 
 export const toTrendingView = async (trendingResults) => {

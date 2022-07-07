@@ -1,4 +1,4 @@
-import { API_KEY, RATING , RANDOM_REQUEST_URL } from "../common/requests-params.js"
+import { API_KEY, RATING , RANDOM_REQUEST_URL } from '../common/requests-params.js';
 
 // https://api.giphy.com/v1/gifs/random?api_key=m2h3bY3cGXyBHla3bhM7gIP64RY97yJg&tag=&rating=g
 
@@ -10,7 +10,7 @@ export const getSingleGif = async() => {
     }catch (err) {
         return err.message;
     }
-}
+};
 export const getRandomGifs = async() => {
     try{
         let response;
@@ -28,12 +28,12 @@ export const getRandomGifs = async() => {
         
         data.forEach((el) => {
             result.push(el);
-        })
+        });
         
         return data;
     } catch (err) {
         return err.message;
     }
     
-}
+};
 
