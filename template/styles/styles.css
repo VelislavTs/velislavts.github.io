@@ -21,6 +21,7 @@ body {
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 1em;
+    height: 400px;
     display: table !important;
     margin-bottom: 1em !important;
 }
