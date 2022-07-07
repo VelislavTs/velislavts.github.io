@@ -26,25 +26,25 @@ export const renderFavoriteStatus = (gifId) => {
     : `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
 };
 
-  // export const renderFavoritesMessage = (id) => { 
-  //   const favorites = getFavorites();
-  //   if(favorites.includes(id)) {
-  //     const div = q('#main-div');
-  //     const message = document.createElement('h5');
-  //     message.innerText = 'Gif addded to favorites successfully!'
-  //     message.classList.add('favorite-gif-message');
-  //     div.appendChild(message);
-  //     setTimeout(function() {
-  //       div.removeChild(message);
-  //     },2000)
-  //  } else {
-  //     const div = q('#main-div');
-  //     const message = document.createElement('h5');
-  //     message.innerText = 'Gif removed from favorites successfully!'
-  //     message.classList.add('favorite-gif-message');
-  //     div.appendChild(message);
-  //     setTimeout(function() {
-  //       div.removeChild(message);
-  //     },2000)
-  //   }
-  // }
+  export const renderFavoritesMessage = (id) => { 
+    const favorites = getFavorites();
+    if(favorites.includes(id)) {
+      const div = q('#main-div');
+      const message = document.createElement('h5');
+      message.innerText = 'Gif addded to favorites successfully!'
+      message.classList.add('favorite-gif-message');
+      div.appendChild(message);
+      setTimeout(function() {
+        div.removeChild(message);
+      },2000)
+   } else {
+      const div = q('#main-div');
+      const message = document.createElement('h5');
+      message.innerText = 'Gif removed from favorites successfully!'
+      message.classList.add('favorite-gif-message');
+      div.appendChild(message);
+      setTimeout(function() {
+        div.removeChild(message);
+      },2000)
+    }
+  }
